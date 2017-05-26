@@ -7,57 +7,11 @@
 				<verifyText>
     				 <visibleTextElement id="imgCarousel">//img[contains(@src,'logo/logo-en.png')]</visibleTextElement>
     			</verifyText>
-				<timeout id="timeout" name="timeout">5</timeout>
-			</method>
-			
-		</module>
-
-		<module name="siteNavigationModule" id="siteNavigationModule">
-			<method name="mainNavigationToCategoryPage" id="mainNavigationToCategoryPage">
-			    <click>
-			        <button id="lnkCatalogue" name = "lnkCatalogue" value="(//nav//ul[@data-rwd-src='navigation']//a//i)[1]"/>
-			        <button id="lnkCategory" name = "lnkCategory" value="(//nav//ul[@data-rwd-src='navigation']//ul[1]//a)[1]"/>
-			        <button id="categoryNameBreadCrumb" name = "categoryNameBreadCrumb" value="//li[@class='selected_breadCrumb']"/>
-			        <button id="categoryNameMainPanel" name = "categoryNameMainPanel" value="//div[@id='product-search-result']//div//h1"/>
-			    </click>
 				<timeout id="timeout" name="timeout">10</timeout>
 			</method>
 			
-			<method name="NavigateToListerPageAndVerify" id="NavigateToListerPageAndVerify">
-			    <click>
-			        <button id="lnkSubCategory" name = "lnkSubCategory" value="//div[1]//a[1]//h4"/>
-			        <button id="subCategoryNameBreadCrumb" name = "subCategoryNameBreadCrumb" value="//li[@class='selected_breadCrumb']"/>
-			        <button id="subCategoryNameMainPanel" name = "subCategoryNameMainPanel" value="//div[@id='product-search-result']//div//h1"/>
-			        <button id="numberOfItemsOnListerPage" name = "numberOfItemsOnListerPage" value="//div[@class='paging']//span"/>
-			    </click>
-				<timeout id="timeout" name="timeout">5</timeout>
-			</method>
-			
-			<method name="navigateToPDP_ListerPage" id="navigateToPDP_ListerPage">
-			    <click>
-			        <button id="lnkProductTile" name = "lnkProductTile" value="//a[1]//div[@class='product-title']"/>
-			        <button id="prodcutPriceOnListerPg" name = "prodcutPriceOnListerPg" value="//a[1]//span[@class='price']"/>
-			        <button id="btnAddToCart" name = "btnAddToCart" value="//button[@name='addProduct']"/>
-			        <button id="prodcutPriceOnPDP" name = "prodcutPriceOnPDP" value="(//div[@class='price right'])[1]"/>
-			        <button id="prodcutNameOnPDP" name = "prodcutNameOnPDP" value="//div//h1"/>
-			    </click>
-				<timeout id="timeout" name="timeout">5</timeout>
-			</method>
-			
-			<method name="navigateToPDP" id="navigateToPDP">
-			    <click>
-			        <button id="btnAddToCart" name = "btnAddToCart" value="//button[@name='addProduct']"/>
-			        <button id="lnkHideCookies" name = "lnkHideCookies" value="//div[contains(@class,'cookie row')]//a//i"/>
-			        <button id="prodcutPriceOnPDP" name = "prodcutPriceOnPDP" value="(//div[@class='price right'])[1]"/>
-			    </click>
-			    <verifyText>
-			        <Mandatory id="txtOnPDP">Make Your Selection</Mandatory>
-			    </verifyText>
-				<timeout id="timeout" name="timeout">5</timeout>
-			</method>
-			
 		</module>
-		
+			
 		<module name="checkoutModule" id="checkoutModule">
 		    	
 		    <method name="updateProductQuantity" id="updateProductQuantity">
@@ -381,8 +335,18 @@
 		    			
 		    <method name="navigateToRegistrationPage" id="navigateToRegistrationPage">
 			    <click>
-			        <button id="lnkMyAccount" name = "lnkMyAccount" value="(//a[contains(@href,'ViewUserAccount-Start')])[3]"/>
-			        <button id="btnCreateAccount" name = "btnCreateAccount" value="//a[contains(@href,'ViewUserAccount-ShowRegister')]"/>
+			        <button id="lnkMyAccount" name = "lnkMyAccount" value="(//a[contains(@href,'ViewUserAccount-Start')])[3]">
+			        	<verifyText>
+    				 		<visibleTextElement id="btnCreateAccount">//a[contains(@href,'ViewUserAccount-ShowRegister')]</visibleTextElement>
+    					</verifyText>
+						<timeout id="timeout" name="timeout">10</timeout>
+			        </button>
+			        <button id="btnCreateAccount" name = "btnCreateAccount" value="//a[contains(@href,'ViewUserAccount-ShowRegister')]">
+			        	<verifyText>
+    				 		<visibleTextElement id="registrationForm">//a[contains(@href,'ViewUserAccount-ShowRegister')]</visibleTextElement>
+    					</verifyText>
+						<timeout id="timeout" name="timeout">10</timeout>
+			        </button>
 			        <button id="registrationForm" name = "registrationForm" value="kor-form"/>
 			        <button id="emailAddress" name = "emailAddress" value="RegisterUserFullEmail_Login"/>
 			    </click>

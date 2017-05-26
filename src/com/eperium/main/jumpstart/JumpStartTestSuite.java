@@ -28,7 +28,8 @@ public class JumpStartTestSuite extends Setup {
 	public void setUpBeforeclass() throws Exception {
 		driverInitialization();
 		this.wDriver = getDriver();
-		this.wait = new WebDriverWait(wDriver, Integer.parseInt(timeoutString));
+		this.wait = new WebDriverWait(wDriver, 10);
+//		this.wait = new WebDriverWait(wDriver, Integer.parseInt(timeoutString));
 		this.js = (JavascriptExecutor) wDriver;
 	}
 

@@ -1,5 +1,8 @@
 package com.eperium.main.jumpstart;
 
+import java.io.File;
+import java.net.MalformedURLException;
+import java.net.URL;
 import java.util.Arrays;
 import java.util.LinkedHashMap;
 import java.util.Properties;
@@ -23,6 +26,8 @@ import com.eperium.testframework.utils.AdvanceXMLUtil;
 import com.eperium.testframework.utils.PropertyLoader;
 import com.eperium.testframework.utils.TestCaseUtil;
 
+import io.appium.java_client.android.AndroidDriver;
+
 public class Setup {
 	public static WebDriver driver = null;
 	public static String browser;
@@ -36,6 +41,7 @@ public class Setup {
 	public static Properties dataProp;
 	public static Properties skuProp;
 	public static Properties ENVIRONMENT;
+	static File app;
 	static String channel;
 	protected String timeoutString = null;
 	String moduleName = null;
@@ -51,6 +57,9 @@ public class Setup {
 
 	public static void getParameter(ITestContext context) throws Exception {
 		try {
+			File classpathRoot = new File(System.getProperty("user.dir"));
+			File appDir = new File(classpathRoot, "/app");
+			app = new File(appDir, "android-debug.v.1.5.BETA.apk");
 			platform = context.getCurrentXmlTest().getParameter("platform");
 			channel = context.getCurrentXmlTest().getParameter("channel");
 			environment = context.getCurrentXmlTest().getParameter("environment");
@@ -62,9 +71,6 @@ public class Setup {
 			browser = context.getCurrentXmlTest().getParameter("selenium.browser");
 			version = context.getCurrentXmlTest().getParameter("selenium.browser.version");
 			testcasename = context.getCurrentXmlTest().getParameter("testcasename");
-			System.setProperty("webdriver.gecko.driver", System.getProperty("user.dir") + "/drivers/geckodriver.exe");
-			System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir") + "/drivers/chromedriver.exe");
-			System.setProperty("webdriver.ie.driver", System.getProperty("user.dir") + "/drivers/IEDriverServer.exe");
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -83,24 +89,30 @@ public class Setup {
 	}
 
 	public static void driverInitialization() throws Exception {
-		if (("firefox").equalsIgnoreCase(browser)) {
-			startFirefoxDriver();
+		if (!(platform.contains("mobile"))) {
+			if (("firefox").equalsIgnoreCase(browser)) {
+				startFirefoxDriver();
+			}
+
+			else if (("chrome").equalsIgnoreCase(browser)) {
+				startChromeDriver();
+			}
+
+			else if (("iexplore").equalsIgnoreCase(browser)) {
+				startIExploreDriver();
+			}
+
+			else if (("safari").equalsIgnoreCase(browser)) {
+				startSafariDriver();
+			}
+
+			else if (("PhantomJS").equalsIgnoreCase(browser)) {
+				startPhantomJSDriver();
+			}
 		}
 
-		else if (("chrome").equalsIgnoreCase(browser)) {
-			startChromeDriver();
-		}
-
-		else if (("iexplore").equalsIgnoreCase(browser)) {
-			startIExploreDriver();
-		}
-
-		else if (("safari").equalsIgnoreCase(browser)) {
-			startSafariDriver();
-		}
-
-		else if (("PhantomJS").equalsIgnoreCase(browser)) {
-			startPhantomJSDriver();
+		else if (platform.contains("mobile")) {
+			startAndroidDriver();
 		}
 
 		else {
@@ -109,10 +121,9 @@ public class Setup {
 	}
 
 	public static DesiredCapabilities fireFoxDesiredCapebilities() {
-		DesiredCapabilities desiredCapabilities = new DesiredCapabilities();
+		DesiredCapabilities desiredCapabilities = DesiredCapabilities.firefox();
 		firefoxProfile = new FirefoxProfile();
 		firefoxProfile.setAcceptUntrustedCertificates(true);
-		desiredCapabilities = DesiredCapabilities.firefox();
 		desiredCapabilities.setCapability("firefox_profile", firefoxProfile);
 		desiredCapabilities.setBrowserName(browser);
 		desiredCapabilities.setVersion(version);
@@ -186,15 +197,26 @@ public class Setup {
 	}
 
 	private static void startIExploreDriver() {
+		System.setProperty("webdriver.ie.driver", System.getProperty("user.dir") + "/drivers/IEDriverServer.exe");
 		driver = new InternetExplorerDriver(internetExplorerDesiredCapebilities());
 	}
 
 	private static void startChromeDriver() {
+		System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir") + "/drivers/chromedriver.exe");
 		driver = new ChromeDriver(chromeDesiredCapebilities());
 	}
 
 	private static void startFirefoxDriver() {
+		System.setProperty("webdriver.gecko.driver", System.getProperty("user.dir") + "/drivers/geckodriver.exe");
 		driver = new FirefoxDriver(fireFoxDesiredCapebilities());
+	}
+
+	private static void startAndroidDriver() {
+		try {
+			driver = new AndroidDriver(new URL("http://127.0.0.1:4723/wd/hub"), androidDesireCapabilities());
+		} catch (MalformedURLException e) {
+			e.printStackTrace();
+		}
 	}
 
 	public static WebDriver getDriver() {
@@ -207,6 +229,19 @@ public class Setup {
 		timeoutString = AdvanceXMLUtil.getValueForTimeOutById(moduleName, methodName, "timeout");
 		testCaseUtil = new TestCaseUtil();
 		baseWidowHandle = driver.getWindowHandle();
+	}
+
+	public static DesiredCapabilities androidDesireCapabilities() {
+		DesiredCapabilities capabilities = new DesiredCapabilities();
+		capabilities.setCapability(CapabilityType.BROWSER_NAME, "");
+		capabilities.setCapability("platformName", "Android");
+		capabilities.setCapability("app", app.getAbsolutePath());
+		capabilities.setCapability("deviceName", "5362ab76");
+		capabilities.setCapability("appPackage", "com.salmon.dfs.servicemanager");
+		capabilities.setCapability("appActivity", "com.salmon.dfs.servicemanager.MainActivity");
+		capabilities.setCapability(CapabilityType.ForSeleniumServer.ENSURING_CLEAN_SESSION, true);
+		capabilities.setCapability("recreateChromeDriverSessions", true);
+		return capabilities;
 	}
 
 }

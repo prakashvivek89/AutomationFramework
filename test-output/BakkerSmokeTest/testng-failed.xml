@@ -18,7 +18,6 @@
           <include name="registrationValidCredentials"/>
           <include name="setUpBeforeclass"/>
           <include name="setupBeforeSuite"/>
-          <include name="navigateToRegistrationPage"/>
           <include name="setupAfterSuite"/>
           <include name="launchHomePage"/>
         </methods>
