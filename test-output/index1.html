@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+  <title>TestNG reports</title>
+
+    <link type="text/css" href="testng-reports.css" rel="stylesheet" />  
+    <script type="text/javascript" src="jquery-1.7.1.min.js"></script>
+    <script type="text/javascript" src="testng-reports.js"></script>
+    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+    <script type='text/javascript'>
+      google.load('visualization', '1', {packages:['table']});
+      google.setOnLoadCallback(drawTable);
+      var suiteTableInitFunctions = new Array();
+      var suiteTableData = new Array();
+    </script>
+    <!--
+      <script type="text/javascript" src="jquery-ui/js/jquery-ui-1.8.16.custom.min.js"></script>
+     -->
+  </head>
+
+  <body>
+    <div class="top-banner-root">
+      <span class="top-banner-title-font">Test results</span>
+      <br/>
+      <span class="top-banner-font-1">1 suite, 1 failed test</span>
+    </div> <!-- top-banner-root -->
+    <div class="navigator-root">
+      <div class="navigator-suite-header">
+        <span>All suites</span>
+        <a href="#" class="collapse-all-link" title="Collapse/expand all the suites">
+          <img class="collapse-all-icon" src="collapseall.gif">
+          </img> <!-- collapse-all-icon -->
+        </a> <!-- collapse-all-link -->
+      </div> <!-- navigator-suite-header -->
+      <div class="suite">
+        <div class="rounded-window">
+          <div class="suite-header light-rounded-window-top">
+            <a href="#" class="navigator-link" panel-name="suite-BakkerSmokeTest">
+              <span class="suite-name border-failed">BakkerSmokeTest</span>
+            </a> <!-- navigator-link -->
+          </div> <!-- suite-header light-rounded-window-top -->
+          <div class="navigator-suite-content">
+            <div class="suite-section-title">
+              <span>Info</span>
+            </div> <!-- suite-section-title -->
+            <div class="suite-section-content">
+              <ul>
+                <li>
+                  <a href="#" class="navigator-link " panel-name="test-xml-BakkerSmokeTest">
+                    <span>E:\Automation\bakker_redesign_testsuite\src\resources\master\test2.xml</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+                <li>
+                  <a href="#" class="navigator-link " panel-name="testlist-BakkerSmokeTest">
+                    <span class="test-stats">1 test</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+                <li>
+                  <a href="#" class="navigator-link " panel-name="group-BakkerSmokeTest">
+                    <span>0 groups</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+                <li>
+                  <a href="#" class="navigator-link " panel-name="times-BakkerSmokeTest">
+                    <span>Times</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+                <li>
+                  <a href="#" class="navigator-link " panel-name="reporter-BakkerSmokeTest">
+                    <span>Reporter output</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+                <li>
+                  <a href="#" class="navigator-link " panel-name="ignored-methods-BakkerSmokeTest">
+                    <span>Ignored methods</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+                <li>
+                  <a href="#" class="navigator-link " panel-name="chronological-BakkerSmokeTest">
+                    <span>Chronological view</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+              </ul>
+            </div> <!-- suite-section-content -->
+            <div class="result-section">
+              <div class="suite-section-title">
+                <span>Results</span>
+              </div> <!-- suite-section-title -->
+              <div class="suite-section-content">
+                <ul>
+                  <li>
+                    <span class="method-stats">1 method, 1 failed,   </span>
+                  </li>
+                  <li>
+                    <span class="method-list-title failed">Failed methods</span>
+                    <span class="show-or-hide-methods failed">
+                      <a href="#" panel-name="suite-BakkerSmokeTest" class="hide-methods failed suite-BakkerSmokeTest"> (hide)</a> <!-- hide-methods failed suite-BakkerSmokeTest -->
+                      <a href="#" panel-name="suite-BakkerSmokeTest" class="show-methods failed suite-BakkerSmokeTest"> (show)</a> <!-- show-methods failed suite-BakkerSmokeTest -->
+                    </span>
+                    <div class="method-list-content failed suite-BakkerSmokeTest">
+                      <span>
+                        <img width="3%" src="failed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-BakkerSmokeTest" title="com.eperium.main.jumpstart.JumpStartTestSuite" hash-for-method="launchHomePage">launchHomePage</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                    </div> <!-- method-list-content failed suite-BakkerSmokeTest -->
+                  </li>
+                </ul>
+              </div> <!-- suite-section-content -->
+            </div> <!-- result-section -->
+          </div> <!-- navigator-suite-content -->
+        </div> <!-- rounded-window -->
+      </div> <!-- suite -->
+    </div> <!-- navigator-root -->
+    <div class="wrapper">
+      <div class="main-panel-root">
+        <div panel-name="suite-BakkerSmokeTest" class="panel BakkerSmokeTest">
+          <div class="suite-BakkerSmokeTest-class-failed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="failed.png"/>
+              <span class="class-name">com.eperium.main.jumpstart.JumpStartTestSuite</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="launchHomePage">
+                  </a> <!-- launchHomePage -->
+                  <span class="method-name">launchHomePage</span>
+                  <div class="stack-trace">java.lang.AssertionError: expected [https://acc.bakker.com/de-de] but found [about:blank]
+	at org.testng.Assert.fail(Assert.java:94)
+	at org.testng.Assert.failNotEquals(Assert.java:496)
+	at org.testng.Assert.assertEquals(Assert.java:125)
+	at org.testng.Assert.assertEquals(Assert.java:178)
+	at org.testng.Assert.assertEquals(Assert.java:188)
+	at com.eperium.main.jumpstart.JumpStartTestSuite.launchHomePage(JumpStartTestSuite.java:206)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:85)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:639)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:816)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1124)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:108)
+	at org.testng.TestRunner.privateRun(TestRunner.java:774)
+	at org.testng.TestRunner.run(TestRunner.java:624)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:359)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:354)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:312)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:261)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1215)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1140)
+	at org.testng.TestNG.run(TestNG.java:1048)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:126)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:152)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:57)
+
+</div> <!-- stack-trace -->
+                  <em>
+(Launch Home Page)                  </em>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-BakkerSmokeTest-class-failed -->
+        </div> <!-- panel BakkerSmokeTest -->
+        <div panel-name="test-xml-BakkerSmokeTest" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">E:\Automation\bakker_redesign_testsuite\src\resources\master\test2.xml</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+            <pre>
+&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;!DOCTYPE suite SYSTEM &quot;http://testng.org/testng-1.0.dtd&quot;&gt;
+&lt;suite verbose=&quot;10&quot; name=&quot;BakkerSmokeTest&quot;&gt;
+  &lt;parameter name=&quot;site&quot; value=&quot;Bakker&quot;/&gt;
+  &lt;parameter name=&quot;platform&quot; value=&quot;*windows&quot;/&gt;
+  &lt;parameter name=&quot;selenium.browser&quot; value=&quot;*PhantomJS&quot;/&gt;
+  &lt;parameter name=&quot;locale&quot; value=&quot;en-GB&quot;/&gt;
+  &lt;parameter name=&quot;testcasename&quot; value=&quot;Test&quot;/&gt;
+  &lt;parameter name=&quot;PDFRequiredPerTestCase&quot; value=&quot;true&quot;/&gt;
+  &lt;parameter name=&quot;selenium.host&quot; value=&quot;localhost&quot;/&gt;
+  &lt;parameter name=&quot;channel&quot; value=&quot;de-de&quot;/&gt;
+  &lt;parameter name=&quot;country&quot; value=&quot;UK-en&quot;/&gt;
+  &lt;listeners&gt;
+    &lt;listener class-name=&quot;com.eperium.testframework.utils.SuiteReportUtils&quot;/&gt;
+    &lt;listener class-name=&quot;com.eperium.testframework.utils.ReportUtil&quot;/&gt;
+  &lt;/listeners&gt;
+  &lt;test name=&quot;Checkout_AnonymousUser&quot;&gt;
+    &lt;classes&gt;
+      &lt;class name=&quot;com.eperium.main.jumpstart.JumpStartTestSuite&quot;&gt;
+        &lt;methods&gt;
+          &lt;include name=&quot;launchHomePage&quot;/&gt;
+        &lt;/methods&gt;
+      &lt;/class&gt; &lt;!-- com.eperium.main.jumpstart.JumpStartTestSuite --&gt;
+    &lt;/classes&gt;
+  &lt;/test&gt; &lt;!-- Checkout_AnonymousUser --&gt;
+&lt;/suite&gt; &lt;!-- BakkerSmokeTest --&gt;
+            </pre>
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="testlist-BakkerSmokeTest" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">Tests for BakkerSmokeTest</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+            <ul>
+              <li>
+                <span class="test-name">Checkout_AnonymousUser (1 class)</span>
+              </li>
+            </ul>
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="group-BakkerSmokeTest" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">Groups for BakkerSmokeTest</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="times-BakkerSmokeTest" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">Times for BakkerSmokeTest</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+            <div class="times-div">
+              <script type="text/javascript">
+suiteTableInitFunctions.push('tableData_BakkerSmokeTest');
+function tableData_BakkerSmokeTest() {
+var data = new google.visualization.DataTable();
+data.addColumn('number', 'Number');
+data.addColumn('string', 'Method');
+data.addColumn('string', 'Class');
+data.addColumn('number', 'Time (ms)');
+data.addRows(1);
+data.setCell(0, 0, 0)
+data.setCell(0, 1, 'launchHomePage')
+data.setCell(0, 2, 'com.eperium.main.jumpstart.JumpStartTestSuite')
+data.setCell(0, 3, 4242);
+window.suiteTableData['BakkerSmokeTest']= { tableData: data, tableDiv: 'times-div-BakkerSmokeTest'}
+return data;
+}
+              </script>
+              <span class="suite-total-time">Total running time: 4 seconds</span>
+              <div id="times-div-BakkerSmokeTest">
+              </div> <!-- times-div-BakkerSmokeTest -->
+            </div> <!-- times-div -->
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="reporter-BakkerSmokeTest" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">Reporter output for BakkerSmokeTest</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="ignored-methods-BakkerSmokeTest" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">58 ignored methods</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+            <div class="ignored-class-div">
+              <span class="ignored-class-name">com.eperium.main.jumpstart.JumpStartTestSuite</span>
+              <div class="ignored-methods-div">
+                <span class="ignored-method-name">navigateToPaymentPage</span>
+                <br/>
+                <span class="ignored-method-name">clickAddNewAddressLink</span>
+                <br/>
+                <span class="ignored-method-name">navigateToLoginPage</span>
+                <br/>
+                <span class="ignored-method-name">navigateToReviewPage</span>
+                <br/>
+                <span class="ignored-method-name">updateProductQuantity</span>
+                <br/>
+                <span class="ignored-method-name">navigateToProfileSettingPage</span>
+                <br/>
+                <span class="ignored-method-name">clickEditLinkForNormalAddress</span>
+                <br/>
+                <span class="ignored-method-name">clickEditShippingLink</span>
+                <br/>
+                <span class="ignored-method-name">validateNewAddressFormFieldsOnMyAccount</span>
+                <br/>
+                <span class="ignored-method-name">verifyGetProfileOnSavedAddress1</span>
+                <br/>
+                <span class="ignored-method-name">logoutHeader</span>
+                <br/>
+                <span class="ignored-method-name">makePayment</span>
+                <br/>
+                <span class="ignored-method-name">navigateToSavedAddressPage1</span>
+                <br/>
+                <span class="ignored-method-name">submitOrder</span>
+                <br/>
+                <span class="ignored-method-name">selectPaymentMethodVisa</span>
+                <br/>
+                <span class="ignored-method-name">navigateToPDP</span>
+                <br/>
+                <span class="ignored-method-name">clickEditInvoiceLink</span>
+                <br/>
+                <span class="ignored-method-name">verifySidePanelAddress3</span>
+                <br/>
+                <span class="ignored-method-name">navigateToSavedAddressPage</span>
+                <br/>
+                <span class="ignored-method-name">logInWithValidCredentials</span>
+                <br/>
+                <span class="ignored-method-name">verifySidePanelAddress4</span>
+                <br/>
+                <span class="ignored-method-name">verifySidePanelAddress1</span>
+                <br/>
+                <span class="ignored-method-name">verifySidePanelAddress2</span>
+                <br/>
+                <span class="ignored-method-name">updateProductQuantityOnCartPage</span>
+                <br/>
+                <span class="ignored-method-name">clickAddNewShipAddressLink</span>
+                <br/>
+                <span class="ignored-method-name">navigateToLoginPage1</span>
+                <br/>
+                <span class="ignored-method-name">clickCreateAccount</span>
+                <br/>
+                <span class="ignored-method-name">selectPaymentMethodMasterCard</span>
+                <br/>
+                <span class="ignored-method-name">verifySuccessfulOrder</span>
+                <br/>
+                <span class="ignored-method-name">verifyGetProfileOnProfileSetting</span>
+                <br/>
+                <span class="ignored-method-name">updateAddress</span>
+                <br/>
+                <span class="ignored-method-name">selectPaymentMethodInvoice</span>
+                <br/>
+                <span class="ignored-method-name">mainNavigationToCategoryPage</span>
+                <br/>
+                <span class="ignored-method-name">registrationValidCredentials</span>
+                <br/>
+                <span class="ignored-method-name">addToBasket</span>
+                <br/>
+                <span class="ignored-method-name">fillInEditAddressFormOnMyAccount</span>
+                <br/>
+                <span class="ignored-method-name">fillInvoiceAddressOnCheckoutAddress</span>
+                <br/>
+                <span class="ignored-method-name">navigateToShippingPage</span>
+                <br/>
+                <span class="ignored-method-name">getValuesFromRegistrationField</span>
+                <br/>
+                <span class="ignored-method-name">proceedToCheckout</span>
+                <br/>
+                <span class="ignored-method-name">verifySidePanelAddress</span>
+                <br/>
+                <span class="ignored-method-name">verifyGetProfileOnProfileSetting2</span>
+                <br/>
+                <span class="ignored-method-name">formValidationEditAddress</span>
+                <br/>
+                <span class="ignored-method-name">navigateToRegistrationPage</span>
+                <br/>
+                <span class="ignored-method-name">verifyGetProfileOnSavedAddress</span>
+                <br/>
+                <span class="ignored-method-name">navigateToPDP_ListerPage</span>
+                <br/>
+                <span class="ignored-method-name">NavigateToListerPageAndVerify</span>
+                <br/>
+                <span class="ignored-method-name">loginDuringCheckout</span>
+                <br/>
+                <span class="ignored-method-name">fillInAddressFormDuringCheckout</span>
+                <br/>
+                <span class="ignored-method-name">navigateToProfileSettingPage1</span>
+                <br/>
+                <span class="ignored-method-name">selectPaymentMethodOneTimeAuthorization</span>
+                <br/>
+                <span class="ignored-method-name">registrationFillAllValues</span>
+                <br/>
+                <span class="ignored-method-name">fillInAddressFormOnMyAccount</span>
+                <br/>
+                <span class="ignored-method-name">verifyGetProfileOnProfileSetting1</span>
+                <br/>
+                <span class="ignored-method-name">logInWithDynamicUser</span>
+                <br/>
+                <span class="ignored-method-name">createAddress</span>
+                <br/>
+                <span class="ignored-method-name">updateAddressOnAddressPage</span>
+                <br/>
+                <span class="ignored-method-name">logInWithValidCredentials1</span>
+                <br/>
+              </div> <!-- ignored-methods-div -->
+            </div> <!-- ignored-class-div -->
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="chronological-BakkerSmokeTest" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">Methods in chronological order</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+            <div class="chronological-class">
+              <div class="chronological-class-name">com.eperium.main.jumpstart.JumpStartTestSuite</div> <!-- chronological-class-name -->
+              <div class="configuration-class before">
+                <span class="method-name">setupBeforeSuite(org.testng.TestRunner@459fd42d)</span>
+                <span class="method-start">0 ms</span>
+              </div> <!-- configuration-class before -->
+              <div class="test-method">
+                <img src="failed.png">
+                </img>
+                <span class="method-name">launchHomePage</span>
+                <span class="method-start">2884 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-class after">
+                <span class="method-name">setupAfterSuite</span>
+                <span class="method-start">7503 ms</span>
+              </div> <!-- configuration-class after -->
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+      </div> <!-- main-panel-root -->
+    </div> <!-- wrapper -->
+  </body>
+</html>

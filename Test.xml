@@ -1,0 +1,33 @@
+<suite name="BakkerSmokeTest" verbose="10" >
+   <parameter name="site" value="Bakker" />
+   <parameter name="locale" value="de-DE" />
+   <parameter name="channel" value="de-de" />
+   <parameter name="country" value="Germany" />
+   <parameter name="selenium.host" value="localhost" />
+   <parameter name="selenium.browser" value= "*firefox" />
+   <parameter name="PDFRequiredPerTestCase" value="False" />
+   <parameter name="testcasename" value="Test" />
+   
+  <listeners>
+       <listener class-name="com.eperium.testframework.utils.SuiteReportUtils"/>
+       <listener class-name="com.eperium.testframework.utils.ReportUtil"/>
+   </listeners> 
+	
+	 <test name="UserRegistration_MandatoryFields" preserve-order="true">
+		<classes>
+			<class name="com.eperium.main.jumpstart.JumpStartTestSuite">
+				<methods>
+					<include name="launchHomePage" />
+					<include name="navigateToRegistrationPage" />
+					<include name="registrationValidCredentials" />
+					<include name="getValuesFromRegistrationField" />
+					<include name="clickCreateAccount" />
+					<include name="navigateToSavedAddressPage" />
+					<include name="verifyGetProfileOnSavedAddress" />
+					<include name="navigateToProfileSettingPage" />
+					<include name="verifyGetProfileOnProfileSetting" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+</suite>

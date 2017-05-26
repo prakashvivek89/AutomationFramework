@@ -1,0 +1,24 @@
+<suite name="BakkerSmokeTest" verbose="10">
+	<parameter name="site" value="Test-Bakker-B2C-Nederland" />
+	<parameter name="environment" value="Test-nl-nl" />
+	<parameter name="locale" value="nl-NL" />
+	<parameter name="channel" value="nl-nl" />
+	<parameter name="country" value="Netherland" />
+	<parameter name="selenium.host" value="localhost" />
+	<parameter name="platform" value="*windows" />
+	<parameter name="selenium.browser" value="chrome" />
+	<parameter name="PDFRequiredPerTestCase" value="true" />
+	<parameter name="testcasename" value="Test" />
+
+	<test name="MyAccount_AddNewAddressAndEditAddress" preserve-order="true">
+		<classes>
+			<class name="com.eperium.main.jumpstart.JumpStartTestSuite">
+				<methods>
+					<include name="launchHomePage" />
+					<include name="navigateToRegistrationPage" />
+					<include name="registrationValidCredentials" />	
+				</methods>
+			</class>
+		</classes>
+	</test>
+		</suite>

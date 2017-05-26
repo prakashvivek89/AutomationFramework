@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite verbose="10" name="Failed suite [BakkerSmokeTest]">
+  <parameter name="PDFRequiredPerTestCase" value="true"/>
+  <parameter name="country" value="Netherland"/>
+  <parameter name="site" value="Test-Bakker-B2C-Nederland"/>
+  <parameter name="environment" value="Test-nl-nl"/>
+  <parameter name="selenium.host" value="localhost"/>
+  <parameter name="testcasename" value="Test"/>
+  <parameter name="channel" value="nl-nl"/>
+  <parameter name="locale" value="nl-NL"/>
+  <parameter name="selenium.browser" value="chrome"/>
+  <parameter name="platform" value="*windows"/>
+  <test name="MyAccount_AddNewAddressAndEditAddress(failed)">
+    <classes>
+      <class name="com.eperium.main.jumpstart.JumpStartTestSuite">
+        <methods>
+          <include name="registrationValidCredentials"/>
+          <include name="setUpBeforeclass"/>
+          <include name="setupBeforeSuite"/>
+          <include name="navigateToRegistrationPage"/>
+          <include name="setupAfterSuite"/>
+          <include name="launchHomePage"/>
+        </methods>
+      </class> <!-- com.eperium.main.jumpstart.JumpStartTestSuite -->
+    </classes>
+  </test> <!-- MyAccount_AddNewAddressAndEditAddress(failed) -->
+</suite> <!-- Failed suite [BakkerSmokeTest] -->

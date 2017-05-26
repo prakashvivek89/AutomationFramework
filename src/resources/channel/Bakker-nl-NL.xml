@@ -1,0 +1,695 @@
+<channel>
+	<modules>
+
+		<module name="homePageModule" id="homePageModule">
+
+			<method name="launchHomePage" id="launchHomePage">
+				<click>
+					<button id="imgCarousel" name="imgCarousel" value="//img[contains(@src,'logo/logo-nl.png')]" />
+				</click>
+				<timeout id="timeout" name="timeout">5</timeout>
+			</method>
+			
+		</module>
+
+		<module name="siteNavigationModule" id="siteNavigationModule">
+			<method name="mainNavigationToCategoryPage" id="mainNavigationToCategoryPage">
+			    <click>
+			        <button id="lnkCatalogue" name = "lnkCatalogue" value="(//nav//ul[@data-rwd-src='navigation']//a//i)[1]"/>
+			        <button id="lnkCategory" name = "lnkCategory" value="(//nav//ul[@data-rwd-src='navigation']//ul[1]//a)[1]"/>
+			        <button id="categoryNameBreadCrumb" name = "categoryNameBreadCrumb" value="//li[@class='selected_breadCrumb']"/>
+			        <button id="categoryNameMainPanel" name = "categoryNameMainPanel" value="//div[@id='product-search-result']//div//h1"/>
+			    </click>
+				<timeout id="timeout" name="timeout">10</timeout>
+			</method>
+			
+			<method name="NavigateToListerPageAndVerify" id="NavigateToListerPageAndVerify">
+			    <click>
+			        <button id="lnkSubCategory" name = "lnkSubCategory" value="//div[1]//a[1]//h4"/>
+			        <button id="subCategoryNameBreadCrumb" name = "subCategoryNameBreadCrumb" value="//li[@class='selected_breadCrumb']"/>
+			        <button id="subCategoryNameMainPanel" name = "subCategoryNameMainPanel" value="//div[@id='product-search-result']//div//h1"/>
+			        <button id="numberOfItemsOnListerPage" name = "numberOfItemsOnListerPage" value="//div[@class='paging']//span"/>
+			    </click>
+				<timeout id="timeout" name="timeout">5</timeout>
+			</method>
+			
+			<method name="navigateToPDP_ListerPage" id="navigateToPDP_ListerPage">
+			    <click>
+			        <button id="lnkProductTile" name = "lnkProductTile" value="//a[1]//div[@class='product-title']"/>
+			        <button id="prodcutPriceOnListerPg" name = "prodcutPriceOnListerPg" value="//a[1]//span[@class='price']"/>
+			        <button id="btnAddToCart" name = "btnAddToCart" value="//button[@name='addProduct']"/>
+			        <button id="prodcutPriceOnPDP" name = "prodcutPriceOnPDP" value="(//div[@class='price right'])[1]"/>
+			        <button id="prodcutNameOnPDP" name = "prodcutNameOnPDP" value="//div//h1"/>
+			    </click>
+				<timeout id="timeout" name="timeout">5</timeout>
+			</method>
+			
+			<method name="navigateToPDP" id="navigateToPDP">
+			    <click>
+			        <button id="btnAddToCart" name = "btnAddToCart" value="//button[@name='addProduct']"/>
+			        <button id="lnkHideCookies" name = "lnkHideCookies" value="//div[contains(@class,'cookie row')]//a//i"/>
+			        <button id="prodcutPriceOnPDP" name = "prodcutPriceOnPDP" value="(//div[@class='price right'])[1]"/>
+			    </click>
+				<timeout id="timeout" name="timeout">5</timeout>
+			</method>
+		</module>
+		
+		<module name="checkoutModule" id="checkoutModule">
+		    
+		    <method name="updateProductQuantity" id="updateProductQuantity">
+			    <click>
+			        <button id="productQuantity" name = "productQuantity" value="//input[contains(@id,'Quantity_')]"/>
+			    </click>
+				<timeout id="timeout" name="timeout">5</timeout>
+			</method>
+			
+		    <method name="updateProductQuantityOnCartPage" id="updateProductQuantityOnCartPage">
+			    <click>
+			        <button id="productQuantityOnBasketPage" name = "productQuantityOnBasketPage" value="//input[contains(@id,'quantity_')]"/>
+			        <button id="btnUpdateOnBasketPage" name = "btnUpdateOnBasketPage" value="//button[@name='update'][contains(@class,'ish-shiftContent')]"/>
+			    </click>
+				<timeout id="timeout" name="timeout">5</timeout>
+			</method>
+		    			
+		    <method name="addToBasket" id="addToBasket">
+			    <click>
+			        <button id="prodcutNameOnPDP" name = "prodcutNameOnPDP" value="//div[@class='grid-18']//h1"/>
+			        <button id="btnAddToCart" name = "btnAddToCart" value="//button[@name='addProduct']"/>
+			        <button id="drpDownMiniCart" name = "drpDownMiniCart" value="//div[contains(@class,'cart-mini')]"/>
+			        <button id="btnViewCart" name = "btnViewCart" value="//a[contains(@class,' proceedbtn')]"/>
+			        <button id="prodcutPriceOnPDP" name = "prodcutPriceOnPDP" value="(//div[@class='price right'])[1]"/>
+			        <button id="productQuantity" name = "productQuantity" value="//input[contains(@id,'Quantity_')]"/>
+			        <button id="btnProceedToCheckout" name = "btnProceedToCheckout" value="//button[@name='accountlogin']"/>
+			        <button id="productTitleOnBasketPage" name = "productTitleOnBasketPage" value="(//a[@class='product-title'])[1]"/>
+			        <button id="productPriceOnBasketPage" name = "productPriceOnBasketPage" value="(//td[contains(@class,'price small right')]//div[2])[1]"/>
+			        <button id="productQuantityOnBasketPage" name = "productQuantityOnBasketPage" value="//input[contains(@id,'quantity_')]"/>
+			    </click>
+				<timeout id="timeout" name="timeout">5</timeout>
+			</method>
+			
+		     <method name="proceedToCheckout_LoggedIn" id="proceedToCheckout_LoggedIn">
+			    <click>
+			        <button id="btnProceedToCheckout" name = "btnProceedToCheckout" value="(//button[@name='checkout'])[1]"/>
+			        <button id="productQuantityOnBasketPage" name = "productQuantityOnBasketPage" value="//input[contains(@id,'quantity_')]"/>
+			        <button id="productTitleOnBasketPage" name = "productTitleOnBasketPage" value="(//a[@class='product-title'])[1]"/>
+			        <button id="subTotalOnBasketPage" name = "subTotalOnBasketPage" value="(//li[@class='ish-costSummary-item']//div[2])[1]"/>
+			        <button id="shippingOnBasketPage" name = "shippingOnBasketPage" value="(//li[@class='ish-costSummary-item']//div[2])[2]"/>
+			        <button id="totalPriceOnBasketPage" name = "totalPriceOnBasketPage" value="//li[contains(@class,'ish-costSummary-totalItem')]//div[2]"/>
+			        <button id="quantityOnAddressPage" name = "quantityOnAddressPage" value="(//div[@class='info']//tr[3]/td[following-sibling::td//a[@class='product-title']])[1]"/>
+			        <button id="productNameOnAddressPage" name = "productNameOnAddressPage" value="(//a[@class='product-title'])[1]"/>
+			        <button id="subTotalOnAddressPage" name = "subTotalOnAddressPage" value="(//li[@class='ish-costSummary-item']//span[2])[1]"/>
+			        <button id="shippingOnAddressPage" name = "shippingOnAddressPage" value="(//li[@class='ish-costSummary-item']//span[2])[2]"/>
+			        <button id="totalPriceOnAddressPage" name = "totalPriceOnAddressPage" value="//li[contains(@class,'ish-costSummary-totalItem')]//span[2]"/>
+			        <button id="lnkLogOut" name="lnkLogOut" value="(//a[contains(@href,'ViewUserAccount-LogoutUser')])[1]"/>
+			    </click>
+				<timeout id="timeout" name="timeout">5</timeout>
+			</method>
+			
+			<method name="proceedToCheckout_Anonymous" id="proceedToCheckout_Anonymous">
+			    <click>
+			        <button id="btnProceedToCheckout" name = "btnProceedToCheckout" value="//button[@name='accountlogin']"/>
+			        <button id="productQuantityOnBasketPage" name = "productQuantityOnBasketPage" value="//input[contains(@id,'quantity_')]"/>
+			        <button id="productTitleOnBasketPage" name = "productTitleOnBasketPage" value="(//a[@class='product-title'])[1]"/>
+			        <button id="subTotalOnBasketPage" name = "subTotalOnBasketPage" value="(//li[@class='ish-costSummary-item']//div[2])[1]"/>
+			        <button id="shippingOnBasketPage" name = "shippingOnBasketPage" value="(//li[@class='ish-costSummary-item']//div[2])[2]"/>
+			        <button id="totalPriceOnBasketPage" name = "totalPriceOnBasketPage" value="//li[contains(@class,'ish-costSummary-totalItem')]//div[2]"/>
+			        <button id="loginForm" name = "loginForm" value="login-user-form"/>
+			        <button id="btnContinueShopping" name = "btnContinueShopping" value="//a[contains(@href,'ViewCart-Checkout')]"/>
+			    </click>
+				<timeout id="timeout" name="timeout">5</timeout>
+			</method>
+			
+			<method name="navigateToAddressPage_Anonymous" id="navigateToAddressPage_Anonymous">
+			    <click>
+			        <button id="loginForm" name = "loginForm" value="login-user-form"/>
+			        <button id="btnContinueShopping" name = "btnContinueShopping" value="//a[contains(@href,'ViewCart-Checkout')]"/>
+			    </click>
+				<timeout id="timeout" name="timeout">5</timeout>
+			</method>
+			
+ 			<method name="loginDuringCheckout" id="loginDuringCheckout">
+				<click>
+				    <button id="btnSignIN" name="btnSignIN" value="//button[@name='login']"/>
+				    <button id="txtboxEmailAddress" name="txtboxEmailAddress" value="//input[@id='ShopLoginForm_Login']"/>
+				    <button id="txtboxPassword" name="txtboxPassword" value="//input[@id='ShopLoginForm_Password']"/>
+				    <button id="lnkLogOut" name="lnkLogOut" value="(//a[contains(@href,'ViewUserAccount-LogoutUser')])[1]"/>
+				</click>
+				<timeout id="timeout" name="timeout">5</timeout>
+			</method>
+		     
+			<method name="fillInvoiceAddressOnCheckoutAddress" id="fillInvoiceAddressOnCheckoutAddress">
+			    <textbox id="EmailCredentials">
+					<text id="email_Email" name="user" email="true" random="true">atestnl@bakker.com</text>
+					<text id="billing_FirstName" name ="FirstName">TestUserFirst</text>
+					<text id="billing_LastName" name ="LastName">TestUserLast</text>
+					<text id="billing_HouseNumber" name ="City">5a</text>
+					<text id="billing_PostalCode" name ="PostalCode">1934 AA</text>
+				</textbox>
+				<click>
+				    <button id="txtboxPostalCode" name="txtboxPostalCode" value="billing_PostalCode"/>
+				    <button id="checkBoxOptInNewsLetter" name="checkBoxOptInNewsLetter" value="//input[@id='email_OptInNewsLetter']/following-sibling::label"/>
+				    <button id="verifiedAddress" name = "verifiedAddress" value="//address[contains(@class,'verified-address')]"/>
+				</click>
+				<timeout id="timeout" name="timeout">5</timeout>
+			</method>
+			
+		    <method name="navigateToShippingPage" id="navigateToShippingPage">
+			    <click>
+			        <button id="btnContinueCheckout" name = "btnContinueCheckout" value="//button[@name='continue']"/>
+			        <button id="shippingPageMethod" name = "shippingPageMethod" value="kor-shipping-methods"/>
+			        <button id="quantityOnAddressPage" name = "quantityOnAddressPage" value="//div[@class='info'][1]//tr[3]/td[1]"/>
+			        <button id="productNameOnAddressPage" name = "productNameOnAddressPage" value="//div[@class='info'][1]//tr[3]/td[2]/a"/>
+			        <button id="subTotalOnAddressPage" name = "subTotalOnAddressPage" value="(//li[@class='ish-costSummary-item']//span[2])[1]"/>
+			        <button id="shippingOnAddressPage" name = "shippingOnAddressPage" value="(//li[@class='ish-costSummary-item']//span[2])[2]"/>
+			        <button id="totalPriceOnAddressPage" name = "totalPriceOnAddressPage" value="//li[contains(@class,'ish-costSummary-totalItem')]//span[2]"/>
+			        <button id="lnkLogOut" name="lnkLogOut" value="(//a[contains(@href,'ViewUserAccount-LogoutUser')])[1]"/>
+			        <button id="btnContinueCheckout_LoggedIn" name="btnContinueCheckout_LoggedIn" value="(//a[contains(@href,'ViewCheckoutAddresses-ContinueCheckout')])[1]"/>
+			    </click>
+			    <verifyText>
+			        <Mandatory id="txtOnShippingPage1">Verzenden</Mandatory>
+			        <Mandatory id="txtOnShippingPage2">Shipping Options:</Mandatory>
+			    </verifyText>
+				<timeout id="timeout" name="timeout">5</timeout>
+			</method>
+		    
+			<method name="navigateToPaymentPage" id="navigateToPaymentPage">
+				<click>
+				    <button id="btnContinueCheckout" name = "btnContinueCheckout" value="//button[@name='continue']"/>
+				    <button id="paymentOptionMasterCard" name = "paymentOptionMasterCard" value="//label[contains(@class,'GC_MASTER_CARD')]"/>
+				    <button id="paymentOptionInvoice" name = "paymentOptionInvoice" value="//label[contains(@class,'BPS_INVOICE')]"/>
+				    <button id="paymentOptionVisa" name = "paymentOptionVisa" value="//label[contains(@class,'GC_VISA')]"/>
+				    <button id="paymentOptionIdeal" name = "paymentOptionIdeal" value="//label[contains(@class,'GC_IDEAL')]"/>
+				    <button id="paymentOptionOTA" name = "paymentOptionOTA" value="//label[contains(@class,'ONE_TIME_AUTHORIZATION')]"/>
+				    <button id="quantityOnPaymentPage" name = "quantityOnPaymentPage" value="//div[@class='info'][1]//tr[3]/td[1]"/>
+			        <button id="productNameOnPaymentPage" name = "productNameOnPaymentPage" value="//div[@class='info'][1]//tr[3]/td[2]/a"/>
+			        <button id="subTotalOnPaymentPage" name = "subTotalOnPaymentPage" value="(//li[@class='ish-costSummary-item']//span[2])[1]"/>
+			        <button id="shippingOnPaymentPage" name = "shippingOnPaymentPage" value="(//li[@class='ish-costSummary-item']//span[2])[2]"/>
+			        <button id="totalPriceOnPaymentPage" name = "totalPriceOnPaymentPage" value="//li[contains(@class,'ish-costSummary-totalItem')]//span[2]"/>
+				</click>
+				<timeout id="timeout" name="timeout">5</timeout>
+			</method>
+			
+			<method name="selectPaymentMethodInvoice" id="selectPaymentMethodInvoice">
+				<click>
+				    <button id="paymentOptionInvoice" name = "paymentOptionInvoice" value="//label[contains(@class,'BPS_INVOICE')]"/>
+				    <button id="nameOfPaymentOption" name = "nameOfPaymentOption" value="//label[contains(@class,'BPS_INVOICE')]//div[@class='bold']"/>
+				</click>
+				<timeout id="timeout" name="timeout">5</timeout>
+			</method>
+			
+			<method name="selectPaymentMethodVisa" id="selectPaymentMethodVisa">
+				<click>
+				    <button id="paymentOptionVisa" name = "paymentOptionVisa" value="//label[contains(@class,'GC_VISA')]"/>
+				    <button id="nameOfPaymentOption" name = "nameOfPaymentOption" value="//label[contains(@class,'GC_VISA')]//div[@class='bold']"/>
+				</click>
+				<timeout id="timeout" name="timeout">5</timeout>
+			</method>
+			
+			<method name="selectPaymentMethodMasterCard" id="selectPaymentMethodMasterCard">
+				<click>
+				    <button id="paymentOptionMasterCard" name = "paymentOptionMasterCard" value="//label[contains(@class,'GC_MASTER_CARD')]"/>
+				    <button id="nameOfPaymentOption" name = "nameOfPaymentOption" value="//label[contains(@class,'GC_MASTER_CARD')]//div[@class='bold']"/>
+				</click>
+				<timeout id="timeout" name="timeout">5</timeout>
+			</method>
+			
+			<method name="navigateToReviewPage" id="navigateToReviewPage">
+				<click>
+				    <button id="btnContinueCheckout" name = "btnContinueCheckout" value="//button[@name='continue']"/>
+				    <button id="paymentOptionInvoice" name = "paymentOptionInvoice" value="//label[contains(@class,'BPS_INVOICE')]"/>
+				    <button id="quantityOnReviewPage" name = "quantityOnReviewPage" value="//tbody//tr[2]//td[1]//div[2]"/>
+				    <button id="productNameOnReviewPage" name = "productNameOnReviewPage" value="//a[@class='product-title']"/>	    
+				    <button id="quantityOnPaymentPage" name = "quantityOnPaymentPage" value="//tbody//tr//td[following-sibling::td//a[@class='product-title']]//div[2]"/>
+			        <button id="productNameOnPaymentPage" name = "productNameOnPaymentPage" value="//div[@class='info'][1]//tr[3]/td[2]/a"/>
+			        <button id="subTotalOnPaymentPage" name = "subTotalOnPaymentPage" value="(//li[@class='ish-costSummary-item']//span[2])[1]"/>
+			        <button id="shippingOnPaymentPage" name = "shippingOnPaymentPage" value="(//li[@class='ish-costSummary-item']//span[2])[2]"/>
+			        <button id="totalPriceOnPaymentPage" name = "totalPriceOnPaymentPage" value="//li[contains(@class,'ish-costSummary-totalItem')]//span[2]"/>
+			        <button id="choosenPaymentOnReviewPage" name = "choosenPaymentOnReviewPage" value="//a[contains(@href,'ViewCheckoutPayment-Review')]/following-sibling::div//div"/>
+				</click>
+				<timeout id="timeout" name="timeout">5</timeout>
+			</method>
+			
+			<method name="submitOrder" id="submitOrder">
+				<click>
+				    <button id="btnSubmitOrder" name = "btnSubmitOrder" value="//button[@name='sendOrder']"/>
+				    <button id="termsAndConditionCheckbox" name = "termsAndConditionCheckbox" value="//label[@class='kor-noLabelErrorColor']"/>
+				</click>
+				<timeout id="timeout" name="timeout">30</timeout>
+			</method>
+			
+		    <method name="makePayment" id="makePayment">
+				<click>
+				    <button id="txtboxCardNumber" name = "txtboxCardNumber" value="F1009"/>
+				    <button id="txtboxsecutiryCode" name = "txtboxsecutiryCode" value="F1136"/>
+				    <button id="dropdownMonth" name = "dropdownMonth" value="F1010_MM"/>
+				    <button id="dropdownYear" name = "dropdownYear" value="F1010_YY"/>
+				    <button id="btnContinue" name = "btnContinue" value="//input[@id='btnSubmit']"/>
+				</click>
+				<timeout id="timeout" name="timeout">5</timeout>
+			</method>
+			
+		    <method name="verifySuccessfulOrder" id="verifySuccessfulOrder">
+				<click>
+				    <button id="quantityOnReceiptPage" name = "quantityOnReceiptPage" value="//tbody//tr[2]//td[1]//div[2]"/>
+				    <button id="productNameOnReceiptPage" name = "productNameOnReceiptPage" value="//a[@class='product-title']"/>	   
+				    <button id="subTotalOnReceiptPage" name = "subTotalOnReceiptPage" value="(//li[@class='ish-costSummary-item']//span[2])[1]"/>
+			        <button id="shippingOnReceiptPage" name = "shippingOnReceiptPage" value="(//li[@class='ish-costSummary-item']//span[2])[2]"/>
+			        <button id="totalPriceOnReceiptPage" name = "totalPriceOnReceiptPage" value="//li[contains(@class,'ish-costSummary-totalItem')]//span[2]"/>
+			        <button id="choosenPaymentOnReceiptPage" name = "choosenPaymentOnReceiptPage" value="//div[@class='bold']"/>
+				    <button id="btnPrintReceipt" name = "btnPrintReceipt" value="//button[@name='printOrder']"/>
+				    <button id="btnContinueShopping" name = "btnContinueShopping" value="//a[contains(@class,'ish-bar-actionButton')]"/>
+				</click>
+				<timeout id="timeout" name="timeout">5</timeout>
+			</method>
+			
+			<method name="clickEditInvoiceLink" id="clickEditInvoiceLink">
+				<Elements>
+				    <button id="addressForm" name = "addressForm" value="//tr[@style='display: table;']//form[contains(@action,'ViewCheckoutAddresses-Dispatch')]"/>
+				    <button id="txtboxFirstName" name = "txtboxFirstName" value="//tr[@style='display: table;']//input[@id='address_FirstName'][@aria-required='true']"/>
+			        <button id="txtboxLastName" name = "txtboxLastName" value="//tr[@style='display: table;']//input[@id='address_LastName'][@aria-required='true']"/>
+			        <button id="txtboxSecondName" name = "txtboxSecondName" value="//tr[@style='display: table;']//input[@id='address_SecondName']"/>
+			        <button id="txtboxHNo" name = "txtboxHNo" value="//tr[@style='display: table;']//input[@id='address_HouseNumber'][@aria-required='true']"/>
+			        <button id="txtboxPostalCode" name = "txtboxPostalCode" value="//tr[@style='display: table;']//input[@id='address_PostalCode'][@aria-required='true']"/>
+				    <button id="btnUpdateAddress" name = "btnUpdateAddress" value="//tr[@style='display: table;']//button[@name='updateAddress']"/>
+				    <button id="radioBtnTitleMr" name="radioBtnTitleMr" value="//tr[@style='display: table;']//input[contains(@value,'mr.text')]/following-sibling::label[1]"/>
+				    <button id="radioBtnTitleMrs" name="radioBtnTitleMrs" value="//tr[@style='display: table;']//input[contains(@value,'mrs.text')]/following-sibling::label[1]"/>
+				</Elements>
+				<click>
+					<button id="linkEditInvoiceAddress" name = "linkEditInvoiceAddress" value="(//a[contains(@href,'EditBillingAddress=true')])[1]"/>
+				</click>
+				<timeout id="timeout" name="timeout">5</timeout>
+			</method>
+			
+			<method name="fillInAddressFormDuringCheckout" id="fillInAddressFormDuringCheckout">
+			    <textbox id="AddressCredentials">
+					<text id="//tr[@style='display: table;']//input[contains(@id,'address_FirstName')]" name="firstName" random="true">UpdateF</text>
+					<text id="//tr[@style='display: table;']//input[contains(@id,'address_SecondName')]" name ="middleName" random="true">UpdateM</text>
+					<text id="//tr[@style='display: table;']//input[contains(@id,'address_LastName')]" name ="lastName" random="true">UpdateL</text>
+					<text id="//tr[@style='display: table;']//input[contains(@id,'address_HouseNumber')][@type='text']" name ="houseNumber">1</text>
+					<text id="//tr[@style='display: table;']//input[contains(@id,'address_PostalCode')]" name ="PostalCode">4569 RT</text>
+					<text id="//tr[@style='display: table;']//input[contains(@id,'address_PhoneHome')]" name ="phoneHome">+31201234567</text>
+					<text id="//tr[@style='display: table;']//input[contains(@id,'address_PhoneMobile')]" name ="phoneMobile">+31612345678</text>
+				</textbox>
+				<click>
+				    <button id="radioBtnTitleMrs" name="radioBtnTitleMrs" value="//tr[@style='display: table;']//input[contains(@value,'mrs.text')]/following-sibling::label[1]"/>	   
+				    <button id="totalFields" name = "totalFields" value="//tr[@style='display: table;']//input[not(ancestor::div[contains(@style,'display:none')])][@type='text']"/>
+			        <button id="txtboxHNo" name = "txtboxHNo" value="//tr[@style='display: table;']//input[contains(@id,'address_HouseNumber')][@type='text']"/>
+			        <button id="txtboxPostalCode" name = "txtboxPostalCode" value="//tr[@style='display: table;']//input[contains(@id,'address_PostalCode')]"/>
+				    <button id="txtboxMobilePhone" name="txtboxMobilePhone" value="//tr[@style='display: table;']//input[contains(@id,'address_PhoneHome')]"/>
+				    <button id="btnUpdateAddress" name = "btnUpdateAddress" value="//tr[@style='display: table;']//button[@name='updateAddress']"/>
+				    <button id="QASAddresses" name = "QASAddresses" value="qas-monikar"/>
+			    	<button id="selectQASAddress" name = "selectQASAddress" value="(//div[@class='qas-monikar']//label)[1]"/>
+				    <button id="verifiedAddress" name = "verifiedAddress" value="//address[contains(@class,'verified-address')]"/>
+				</click>
+				<timeout id="timeout" name="timeout">5</timeout>
+			</method>
+			
+			<method name="updateAddressOnAddressPage" id="updateAddressOnAddressPage">
+				<click>
+				    <button id="totalExistingAddresses" name="totalExistingAddresses" value="//tr[contains(@class,'kor-myAccount-addressBox')]"/>
+				    <button id="invoiceAddress" name="invoiceAddress" value="//table[not(contains(@class,'lastTable'))]//div[@class='ish-address']"/>
+				    <button id="shippingAddress" name="shippingAddress" value="//table[(contains(@class,'lastTable'))]//div[@class='ish-address']"/>
+				    <button id="txtboxFirstName" name = "txtboxFirstName" value="//tr[@style='display: table;']//input[contains(@id,'address_FirstName')]"/>
+			        <button id="txtboxLastName" name = "txtboxLastName" value="//tr[@style='display: table;']//input[contains(@id,'address_LastName')]"/>
+			        <button id="txtboxMiddleName" name = "txtboxMiddleName" value="//tr[@style='display: table;']//input[contains(@id,'address_SecondName')]"/>
+				    <button id="radioBtnTitleMrs" name="radioBtnTitleMrs" value="//tr[@style='display: table;']//input[contains(@value,'mrs.text')]/following-sibling::label[1]"/>
+				    <button id="txtboxHomePhone" name="txtboxHomePhone" value="//tr[@style='display: table;']//input[contains(@id,'address_PhoneHome')]"/>
+				    <button id="txtboxMobilePhone" name="txtboxMobilePhone" value="//tr[@style='display: table;']//input[contains(@id,'address_PhoneMobile')]"/>
+				    <button id="verifiedAddress" name = "verifiedAddress" value="//address[contains(@class,'verified-address')]"/>
+				    <button id="btnUpdateAddress" name="btnUpdateAddress" value="//tr[@style='display: table;']//button[@name='updateAddress']"/>
+				    <button id="btnAddNewAddress" name="btnAddNewAddress" value="//tr[@style='display: table;']//button[@name='addNewBilling']"/>
+				</click>
+				<timeout id="timeout" name="timeout">5</timeout>
+			</method>
+			
+			<method name="clickEditShippingLink" id="clickEditShippingLink">
+				<Elements>
+				    <button id="addressForm" name = "addressForm" value="//tr[@style='display: table;']//form[contains(@action,'ViewCheckoutAddresses-Dispatch')]"/>
+				    <button id="txtboxFirstName" name = "txtboxFirstName" value="//tr[@style='display: table;']//input[@id='address_FirstName']"/>
+			        <button id="txtboxSecondName" name = "txtboxSecondName" value="//tr[@style='display: table;']//input[@id='address_LastName']"/>
+			        <button id="txtboxMiddleName" name = "txtboxMiddleName" value="//tr[@style='display: table;']//input[@id='address_SecondName']"/>
+			        <button id="txtboxHNo" name = "txtboxHNo" value="//tr[@style='display: table;']//input[@id='address_HouseNumber']"/>
+			        <button id="txtboxPostalCode" name = "txtboxPostalCode" value="//tr[@style='display: table;']//input[@id='address_PostalCode']"/>
+				    <button id="radioBtnTitleMr" name="radioBtnTitleMr" value="//tr[@style='display: table;']//input[contains(@value,'mr.text')]/following-sibling::label[1]"/>
+				    <button id="radioBtnTitleMrs" name="radioBtnTitleMrs" value="//tr[@style='display: table;']//input[contains(@value,'mrs.text')]/following-sibling::label[1]"/>
+				    <button id="btnUpdateAddress" name = "btnUpdateAddress" value="//tr[@style='display: table;']//button[@name='updateAddress']"/>
+				</Elements>
+				<click>
+					<button id="linkEditShippingAddress" name = "linkEditShippingAddress" value="(//a[contains(@href,'EditShippingAddress')])[1]"/>
+				</click>
+				<timeout id="timeout" name="timeout">5</timeout>
+			</method>
+			
+			<method name="clickAddNewShipAddressLink" id="clickAddNewShipAddressLink">
+				<Elements>
+				    <button id="addressForm" name = "addressForm" value="tr[style='display: table;'] form[action*='ViewCheckoutAddresses-Dispatch']"/>
+				    <button id="txtboxFirstName" name = "txtboxFirstName" value="//tr[@style='display: table;']//input[contains(@id,'address_FirstName')][@aria-required='true']"/>
+			        <button id="txtboxLastName" name = "txtboxLastName" value="//tr[@style='display: table;']//input[contains(@id,'address_LastName')][@aria-required='true']"/>
+			        <button id="txtboxHNo" name = "txtboxHNo" value="//tr[@style='display: table;']//input[contains(@id,'address_HouseNumber')][@aria-required='true']"/>
+			        <button id="txtboxPostalCode" name = "txtboxPostalCode" value="//tr[@style='display: table;']//input[contains(@id,'address_PostalCode')][@aria-required='true']"/>
+				    <button id="drpDownTitle" name = "drpDownTitle" value="//tr[@style='display: table;']//select[contains(@id,'address_Title')]"/>
+				    <button id="btnUpdateAddress" name = "btnUpdateAddress" value="//tr[@style='display: table;']//button[@name='addNewBilling']"/>
+				</Elements>
+				<click>
+					<button id="linkAddNewShipAddress" name = "linkAddNewShipAddress" value="a[href*='NewShippingAddress=true']"/>
+				</click>
+				<timeout id="timeout" name="timeout">5</timeout>
+			</method>
+			
+			<method name="verifySidePanelAddress" id="verifySidePanelAddress">
+				<click>
+				    <button id="invAddressSidePanel" name = "invAddressSidePanel" value="//a[contains(@href,'EditBillingAddress=true')]/following-sibling::*[position()=1]//div[@class='ish-address']"/>
+				    <button id="shipAddressSidePanel" name = "shipAddressSidePanel" value="//a[contains(@href,'EditShippingAddress=true')]/following-sibling::*[position()=1]//div[@class='ish-address']"/>
+			        <button id="invAddressSidePanel_confirm" name = "invAddressSidePanel_confirm" value="(//div[@class='ish-address'])[2]"/>
+			        <button id="shipAddressSidePanel_confirm" name = "shipAddressSidePanel_confirm" value="(//div[@class='ish-address'])[1]"/>
+				</click>
+				<timeout id="timeout" name="timeout">5</timeout>
+			</method>
+		    
+		</module>
+		
+		<module name="userAccountModule" id="userAccountModule">
+		    
+		    <method name="navigateToLoginPage" id="navigateToLoginPage">
+				<click>
+				    <button id="lnkMyAccount" name = "lnkMyAccount" value="(//a[contains(@href,'ViewUserAccount-Start')])[3]"/>
+				    <button id="loginForm" name = "loginForm" value="//form[@id='login-user-form']"/>
+				</click>
+				<timeout id="timeout" name="timeout">5</timeout>
+			</method>
+			
+		    <method name="logInWithValidCredentials" id="logInWithValidCredentials">
+				<click>
+				    <button id="txtboxEmailAddress" name = "txtboxEmailAddress" value="//input[@id='ShopLoginForm_Login']"/>
+				    <button id="txtboxPassword" name = "txtboxPassword" value="//input[@id='ShopLoginForm_Password']"/>
+				    <button id="btnSignIn" name = "btnSignIn" value="//button[@value='Login']"/>
+				</click>
+				<timeout id="timeout" name="timeout">5</timeout>
+			</method>
+		    			
+		    <method name="navigateToRegistrationPage" id="navigateToRegistrationPage">
+			    <click>
+			        <button id="lnkMyAccount" name = "lnkMyAccount" value="(//a[contains(@href,'ViewUserAccount-Start')])[3]"/>
+			        <button id="btnCreateAccount" name = "btnCreateAccount" value="//a[contains(@href,'ViewUserAccount-ShowRegister')]"/>
+			        <button id="registrationForm" name = "registrationForm" value="kor-form"/>
+			        <button id="emailAddress" name = "emailAddress" value="RegisterUserFullEmail_Login"/>
+			    </click>
+				<timeout id="timeout" name="timeout">5</timeout>
+			</method>
+			
+		    <method name="registrationValidCredentials" id="registrationValidCredentials">
+				<textbox id="EmailCredentials">
+					<text id="RegisterUserFullEmail_Login" name="user" email="true" random="true">atestnl@bakker.com</text>
+					<text id="RegisterUserFullEmail_Password" name ="password">ebsi@123</text>
+					<text id="RegisterUserFullEmail_PasswordConfirmation" name ="password">ebsi@123</text>
+					<text id="AddressForm_FirstName" name ="password">TestUserFirst</text>
+					<text id="AddressForm_LastName" name ="password">TestUserLast</text>
+					<text id="AddressForm_HouseNumber" name ="password">5a</text>
+					<text id="AddressForm_PostalCode" name ="password">1934 AA</text>
+				</textbox>
+				<click>
+					<button id="txtboxHouseNo" name="txtboxHouseNo" value="AddressForm_HouseNumber"/>
+					<button id="radioBtnTitleMrs" name="radioBtnTitleMrs" value="//input[contains(@value,'mrs.text')]/following-sibling::label"/>
+					<button id="QASAddresses" name = "QASAddresses" value="qas-monikar"/>
+			    	<button id="selectQASAddress" name = "selectQASAddress" value="(//div[@class='qas-monikar']//label)[1]"/>
+				    <button id="txtboxPostalCode" name="txtboxPostalCode" value="AddressForm_PostalCode"/>
+				    <button id="emailTextbox" name="emailTextbox" value="//input[@id='RegisterUserFullEmail_Login']"/>
+					<button id="checkBoxOptInNewsLetter" name="checkBoxOptInNewsLetter" value="//input[@id='RegisterUserFullEmail_OptInNewsLetter']/following-sibling::label"/>
+					<button id="verifiedAddress" name = "verifiedAddress" value="//address[contains(@class,'verified-address')]"/>
+				</click>
+				 <verifyText>
+			        <Mandatory id="countryName">Nederland</Mandatory>
+			    </verifyText>
+				<timeout id="timeout" name="timeout">30</timeout>
+			</method>
+			
+			<method name="registrationFillAllValues" id="registrationFillAllValues">
+				<textbox id="EmailCredentials">
+					<text id="RegisterUserFullEmail_Login" name="user" email="true" random="true">atestnl@bakker.com</text>
+					<text id="RegisterUserFullEmail_Password" name ="password">ebsi@123</text>
+					<text id="RegisterUserFullEmail_PasswordConfirmation" name ="password">ebsi@123</text>
+					<text id="AddressForm_FirstName" name ="firstName">FirstName</text>
+					<text id="AddressForm_LastName" name ="lastName">LastName</text>
+					<text id="AddressForm_SecondName" name ="secondName">MiddleName</text>
+					<text id="AddressForm_HouseNumber" name ="HouseNo">5a</text>
+					<text id="AddressForm_PostalCode" name ="PostalCode">1730 AA</text>
+					<text id="AddressForm_PhoneHome" name ="phoneHome">+31775715715</text>
+					<text id="AddressForm_PhoneMobile" name ="phoneMobile">+31612345678</text>
+				</textbox>
+				<dropdown>
+					<selected id="AddressForm_Birthday_Day" name="Title" index="12"></selected>
+					<selected id="AddressForm_Birthday_Month" name="Title" index="6"></selected>
+					<selected id="AddressForm_Birthday_Year" name="Title" index="1989"></selected>
+				</dropdown>
+				<click>
+					<button id="radioBtnTitleMrs" name="radioBtnTitleMrs" value="//input[contains(@value,'mrs.text')]/following-sibling::label"/>
+					<button id="QASAddresses" name = "QASAddresses" value="qas-monikar"/>
+			    	<button id="selectQASAddress" name = "selectQASAddress" value="(//div[@class='qas-monikar']//label)[1]"/>
+				    <button id="txtboxPostalCode" name="txtboxPostalCode" value="AddressForm_PostalCode"/>
+				    <button id="txtboxHouseNo" name="txtboxHouseNo" value="AddressForm_HouseNumber"/>
+				    <button id="checkBoxOptInNewsLetter" name="checkBoxOptInNewsLetter" value="//input[@id='RegisterUserFullEmail_OptInNewsLetter']/following-sibling::label"/>
+					<button id="verifiedAddress" name = "verifiedAddress" value="//address[contains(@class,'verified-address')]"/>
+				</click>
+				<timeout id="timeout" name="timeout">30</timeout>
+			</method>
+			
+			<method name="getValuesFromRegistrationField" id="getValuesFromRegistrationField">
+				<click>
+				    <button id="txtboxPostalCode" name="txtboxPostalCode" value="AddressForm_PostalCode"/>
+				    <button id="checkBoxOptInNewsLetter" name="checkBoxOptInNewsLetter" value="//input[@id='RegisterUserFullEmail_OptInNewsLetter']/following-sibling::label"/>
+					<button id="verifiedAddress" name = "verifiedAddress" value="//address[contains(@class,'verified-address')]"/>
+					<button id="txtboxFirstName" name = "txtboxFirstName" value="AddressForm_FirstName"/>
+					<button id="txtboxMiddleName" name = "txtboxMiddleName" value="AddressForm_SecondName"/>
+					<button id="txtboxLastName" name = "txtboxLastName" value="AddressForm_LastName"/>
+					<button id="txtboxEmailAddress" name = "txtboxEmailAddress" value="RegisterUserFullEmail_Login"/>
+					<button id="txtboxPhoneHome" name = "txtboxFirstName" value="AddressForm_PhoneHome"/>
+					<button id="txtboxPhoneMobile" name = "txtboxFirstName" value="AddressForm_PhoneMobile"/>
+					<button id="radioBtnTitleMrs" name="radioBtnTitleMrs" value="//input[contains(@value,'mrs.text')]/following-sibling::label"/>
+					<button id="dropdownDay" name = "dropdownDay" value="AddressForm_Birthday_Day"/>
+					<button id="dropdownMonth" name = "dropdownMonth" value="AddressForm_Birthday_Month"/>
+					<button id="dropdownYear" name = "dropdownYear" value="AddressForm_Birthday_Year"/>
+				</click>
+				<timeout id="timeout" name="timeout">5</timeout>
+			</method>
+			
+			<method name="clickCreateAccount" id="clickCreateAccount">
+				<click>
+				    <button id="btnCreateAccount" name = "btnCreateAccount" value="//button[@name='CreateAccount']"/>
+					<button id="lnkLogout" name = "lnkLogout" value="//a[contains(@href,'ViewUserAccount-LogoutUser')]"/>
+				</click>
+				<timeout id="timeout" name="timeout">5</timeout>
+			</method>
+			
+		    <method name="logoutHeader" id="logoutHeader">
+				<click>
+				    <button id="lnkLogout" name="lnkLogout" value="(//div[contains(@class,'header-main')]//a[contains(@href,'ViewUserAccount-LogoutUser')])[1]"/>
+				    <button id="bakkerLogo" name="bakkerLogo" value="//img[contains(@src,'logo/logo-nl.png')]"/>
+				</click>
+				<timeout id="timeout" name="timeout">5</timeout>
+			</method>
+		    
+		   <method name="navigateToSavedAddressPage" id="navigateToSavedAddressPage">
+				<click>
+				    <button id="lnkSavedAddresses" name = "lnkSavedAddresses" value="(//a[contains(@href,'ViewUserAddressList-List')])[1]"/>
+				    <button id="lnkAddNewAddress" name="lnkAddNewAddress" value="//div[contains(@class,'addANewAddressLink')]//a"/>
+				    <button id="selectedSavedAddressLink" name="selectedSavedAddressLink" value="(//a[contains(@href,'ViewUserAddressList-List')])[1][@class='selected']"/>
+				</click>
+				<timeout id="timeout" name="timeout">5</timeout>
+			</method>
+			
+			<method name="navigateToProfileSettingPage" id="navigateToProfileSettingPage">
+				<click>
+				    <button id="lnkProfileSettings" name = "lnkProfileSettings" value="(//a[contains(@href,'ViewProfileSettings-ViewProfile')])[1]"/>
+				    <button id="lnkEdit" name="lnkEdit" value="//a[contains(@href,'ViewProfileSettings-ViewPassword')]"/>
+				    <button id="selectedProfileSettingsLink" name="selectedProfileSettingsLink" value="//a[contains(@href,'ViewProfileSettings-ViewProfile')][@class='selected']"/>
+				</click>
+				<timeout id="timeout" name="timeout">5</timeout>
+			</method>
+			
+			<method name="clickAddNewAddressLink" id="clickAddNewAddressLink">
+				<click>
+				    <button id="lnkAddNewAddress" name="lnkAddNewAddress" value="//div[contains(@class,'addANewAddressLink')]//a"/>
+				    <button id="formField" name="formField" value="ish-section"/>
+				    <button id="totalExistingAddresses" name="totalExistingAddresses" value="//tr[contains(@class,'kor-myAccount-addressBox')]"/>
+				    <button id="existingAddress" name="existingAddress" value="(//div[@class='ish-address'])"/>
+				    <button id="linkEditAddress" name="linkEditAddress" value="//a[contains(@class,'update-address')]"/>
+				    <button id="linkDeleteAddress" name="linkDeleteAddress" value="//a[contains(@class,'removeLink')]"/>
+				</click>
+				<timeout id="timeout" name="timeout">5</timeout>
+			</method>
+			
+			<method name="validateNewAddressFormFieldsOnMyAccount" id="validateNewAddressFormFieldsOnMyAccount">
+				<Elements>
+					<button id="totalMandatoryFields" name="totalMandatoryFields" value="//input[@aria-required='true'][@type='text' and not(ancestor::div[contains(@style,'display:none')])]"/>
+				    <button id="totalRadiobtns" name="totalRadiobtns" value="//input[contains(@id,'address_Title')]/following-sibling::label"/>
+				    <button id="txtboxFirstName" name="txtboxFirstName" value="//input[@id='address_FirstName'][@aria-required='true']"/>
+				    <button id="txtboxMiddleName" name="txtboxMiddleName" value="//input[@id='address_SecondName']"/>
+				    <button id="txtboxLastName" name="txtboxLastName" value="//input[@id='address_LastName'][@aria-required='true']"/>
+				    <button id="txtboxHNo" name="txtboxHNo" value="//input[@id='address_HouseNumber'][@aria-required='true']"/>
+				    <button id="txtboxphoneHome" name="txtboxphoneHome" value="//form[@id='kor-new-address-form']//input[@id='address_PhoneHome']"/>
+				    <button id="txtboxphoneMobile" name="txtboxphoneMobile" value="//form[@id='kor-new-address-form']//input[@id='address_PhoneMobile']"/>
+				    <button id="txtboxPostalCode" name="txtboxPostalCode" value="//input[@id='address_PostalCode'][@aria-required='true']"/>
+				    <button id="chkboxShippingAddress" name="chkboxShippingAddress" value="//label[@for='address_PreferredShippingAddress']"/>
+				    <button id="chkboxBillingAddress" name="chkboxBillingAddress" value="//label[@for='address_PreferredBillingAddress']"/>
+				</Elements>
+				<click>
+					<button id="totalMandatoryFields" name="totalMandatoryFields" value="//input[not(ancestor::div[contains(@style,'display:none')])][@aria-required='true'][@type='text']"/>
+				    <button id="totalFields" name="totalFields" value="//input[contains(@id,'address_') and not(ancestor::div[contains(@style,'display:none')])][@type='text']"/>
+				</click>
+				<timeout id="timeout" name="timeout">5</timeout>
+			</method>
+			
+			<method name="fillInAddressFormOnMyAccount" id="fillInAddressFormOnMyAccount">
+				<textbox id="validAddress">
+					<text id="//input[@id='address_FirstName'][@aria-required='true']" name ="firstName">first</text>
+					<text id="//input[@id='address_LastName'][@aria-required='true']" name ="lastName">Last</text>
+					<text id="//input[@id='address_SecondName']" name ="middle">middle</text>
+					<text id="//input[@id='address_HouseNumber'][@aria-required='true']" name ="houseNumber">5</text>
+					<text id="//input[@id='address_PostalCode'][@aria-required='true']" name ="postalCode">1730 AA</text>
+					<text id="//form[@id='kor-new-address-form']//input[@id='address_PhoneHome']" name ="phoneHome">+31201234567</text>
+					<text id="//form[@id='kor-new-address-form']//input[@id='address_PhoneMobile']" name ="phoneMobile">+31612345678</text>
+				</textbox>
+				<click>
+					<button id="radioBtnTitleMrs" name = "radioBtnTitleMrs" value="//input[contains(@value,'mrs.text')]/following-sibling::label"/>
+					<button id="QASAddresses" name = "QASAddresses" value="qas-monikar"/>
+			    	<button id="selectQASAddress" name = "selectQASAddress" value="(//div[@class='qas-monikar']//label)[1]"/>
+			    	<button id="txtboxHno" name="txtboxHno" value="//input[@id='address_HouseNumber'][@aria-required='true']"/>
+				    <button id="txtboxPostalCode" name="txtboxPostalCode" value="//input[@id='address_PostalCode'][@aria-required='true']"/>
+				    <button id="txtboxPhoneHome" name="txtboxPhoneHome" value="//form[@id='kor-new-address-form']//input[@id='address_PhoneHome']"/>
+					<button id="verifiedAddress" name = "verifiedAddress" value="//address[contains(@class,'verified-address')]"/>
+				</click>
+				<timeout id="timeout" name="timeout">5</timeout>
+			</method>
+			
+			<method name="createAddress" id="createAddress">
+				<click>
+				    <button id="totalExistingAddresses" name="totalExistingAddresses" value="//tr[contains(@class,'kor-myAccount-addressBox')]"/>
+				    <button id="existingAddress" name="existingAddress" value="(//div[@class='ish-address'])"/>
+				    <button id="selectedTitle" name="selectedTitle" value="//input[contains(@value,'mrs.text')]/following-sibling::label"/>
+				    <button id="txtboxFirstName" name="txtboxFirstName" value="address_FirstName"/>
+				    <button id="txtboxLastName" name="txtboxLastName" value="address_LastName"/>
+				    <button id="txtboxMiddleName" name="txtboxMiddleName" value="address_SecondName"/>
+				    <button id="txtboxHNo" name="txtboxHNo" value="address_HouseNumber"/>
+				    <button id="txtboxPostalCode" name="txtboxPostalCode" value="address_PostalCode"/>
+				    <button id="txtboxPhoneHome" name="txtboxPhoneHome" value="//form[@id='kor-new-address-form']//input[@id='address_PhoneHome']"/>
+				    <button id="txtboxPhoneMobile" name="txtboxPhoneMobile" value="//form[@id='kor-new-address-form']//input[@id='address_PhoneMobile']"/>
+				    <button id="verifiedAddress" name = "verifiedAddress" value="//address[contains(@class,'verified-address')]"/>
+				    <button id="btnCreateAddress" name="btnCreateAddress" value="createAddress"/>
+				    <button id="lnkAddNewAddress" name="lnkAddNewAddress" value="//div[contains(@class,'addANewAddressLink')]//a"/>
+				</click>
+				<timeout id="timeout" name="timeout">5</timeout>
+			</method>
+			
+			<method name="clickEditLinkForNormalAddress" id="clickEditLinkForNormalAddress">
+				<click>
+				    <button id="formField" name="formField" value="form#kor-edit-address-form div.ish-section"/>
+				    <button id="lnkEditAddress" name = "lnkEditAddress" value="//a[contains(@data-url,'PreferredShipping=false')]"/>
+				    <button id="selectedSavedAddressLink" name="selectedSavedAddressLink" value="(//a[contains(@href,'ViewUserAddressList-List')])[1][@class='selected']"/>
+				    <button id="totalExistingAddresses" name="totalExistingAddresses" value="//tr[contains(@class,'kor-myAccount-addressBox')]"/>
+				    <button id="existingAddress" name="existingAddress" value="(//div[@class='ish-address'])"/>				    
+				</click>
+				<timeout id="timeout" name="timeout">5</timeout>
+			</method>
+			
+			<method name="formValidationEditAddress" id="formValidationEditAddress">
+			    <Elements>
+			        <button id="radioBtnTitleMr" name="radioBtnTitleMr" value="(//input[contains(@value,'mr.text')]/following-sibling::label[1])[2]"/>
+				    <button id="radioBtnTitleMrs" name="radioBtnTitleMrs" value="(//input[contains(@value,'mrs.text')]/following-sibling::label[1])[2]"/>
+				    <button id="txtboxFirstName" name="txtboxFirstName" value="(//input[@id='address_FirstName'][@aria-required='true'])[2]"/>
+				    <button id="txtboxLastName" name="txtboxLastName" value="(//input[@id='address_LastName'][@aria-required='true'])[2]"/>
+				    <button id="txtboxMiddleName" name="txtboxMiddleName" value="(//input[@id='address_SecondName'])[2]"/>
+				    <button id="txtboxHNo" name="txtboxHNo" value="(//input[@id='address_HouseNumber'][@aria-required='true'])[2]"/>
+				    <button id="txtboxPostalCode" name="txtboxPostalCode" value="(//input[@id='address_PostalCode'][@aria-required='true'])[2]"/>
+				    <button id="chkboxShippingAddress" name="chkboxShippingAddress" value="(//label[contains(@for,'address_PreferredShippingAddress')])[2]"/>
+				    <button id="chkboxBillingAddress" name="chkboxBillingAddress" value="(//label[contains(@for,'address_PreferredBillingAddress')])[2]"/>
+				    <button id="txtboxPhoneHome" name="txtboxPhoneHome" value="//td//input[@id='address_PhoneHome']"/>
+				    <button id="txtboxPhoneMobile" name="txtboxPhoneMobile" value="//td//input[@id='address_PhoneMobile']"/>
+				    <button id="selectedTitle" name="selectedTitle" value="//td//input[contains(@value,'mrs.text')][@checked='checked']/following-sibling::label"/>
+			    </Elements>
+			    <click>
+			    	<button id="totalMandatoryFields" name="totalMandatoryFields" value="//td[@style='']//input[not(ancestor::div[contains(@style,'display:none')])][@aria-required='true'][@type='text']"/>
+					<button id="totalFields" name = "totalFields" value="//td[@style='']//input[not(ancestor::div[contains(@style,'display:none')])][@type='text']"/>
+				    <button id="totalRadiobtns" name="totalRadiobtns" value="//td//input[contains(@id,'address_Title')]"/>
+				</click>
+				<timeout id="timeout" name="timeout">5</timeout>
+			</method>
+			
+			<method name="fillInEditAddressFormOnMyAccount" id="fillInEditAddressFormOnMyAccount">
+				 <textbox id="AddressCredentials">
+					<text id="(//input[@id='address_FirstName'])[2]" name="firstName" random="true">Upfirst</text>
+					<text id="(//input[@id='address_LastName'])[2]" name ="lastName" random="true">Uplast</text>
+					<text id="(//input[@id='address_SecondName'])[2]" name ="middleName" random="true">Upmiddle</text>
+					<text id="(//input[@id='address_HouseNumber'])[2]" name ="houseNumber">1</text>
+					<text id="(//input[@id='address_PostalCode'])[2]" name ="postalCode">1391 GH</text>
+				</textbox>
+				<click>
+					<button id="radioBtnTitleMrs" name="radioBtnTitleMrs" value="(//input[contains(@value,'mrs.text')]/following-sibling::label[1])[2]"/>
+					<button id="txtboxPostalCode" name="txtboxPostalCode" value="//td//input[@id='address_PostalCode'][@aria-required='true']"/>
+				    <button id="txtboxHno" name="txtboxHno" value="(//input[@id='address_HouseNumber'])[2]"/>
+				    <button id="txtboxPhoneHome" name="txtboxPhoneHome" value="//td//input[@id='address_PhoneHome']"/>
+					<button id="QASAddresses" name = "QASAddresses" value="qas-monikar"/>
+			    	<button id="selectQASAddress" name = "selectQASAddress" value="(//div[@class='qas-monikar']//label)[1]"/>
+					<button id="verifiedAddress" name = "verifiedAddress" value="//address[contains(@class,'verified-address')]"/>
+				</click>
+				<timeout id="timeout" name="timeout">5</timeout>
+			</method>
+			
+			<method name="updateAddress" id="updateAddress">
+				<click>
+				    <button id="totalExistingAddresses" name="totalExistingAddresses" value="//tr[contains(@class,'kor-myAccount-addressBox')]"/>
+				    <button id="existingAddress" name="existingAddress" value="(//div[@class='ish-address'])"/>
+				    <button id="selectedTitle" name="selectedTitle" value="//td//input[contains(@value,'mrs.text')]/following-sibling::label"/>
+				    <button id="txtboxFirstName" name="txtboxFirstName" value="(//input[@id='address_FirstName'])[2]"/>
+				    <button id="txtboxLastName" name="txtboxLastName" value="(//input[@id='address_LastName'])[2]"/>
+				    <button id="txtboxMiddleName" name="txtboxMiddleName" value="(//input[@id='address_SecondName'])[2]"/>
+				    <button id="txtboxHNo" name="txtboxHNo" value="(//input[@id='address_HouseNumber'])[2]"/>
+				    <button id="txtboxPostalCode" name="txtboxPostalCode" value="(//input[@id='address_PostalCode'])[2]"/>
+				    <button id="verifiedAddress" name = "verifiedAddress" value="//address[contains(@class,'verified-address')]"/>
+				    <button id="btnUpdateAddress" name="btnUpdateAddress" value="//button[@name='update']"/>
+				    <button id="lnkAddNewAddress" name="lnkAddNewAddress" value="//div[contains(@class,'addANewAddressLink')]//a"/>
+				</click>
+				<timeout id="timeout" name="timeout">5</timeout>
+			</method>
+			
+			<method name="logInWithDynamicUser" id="logInWithDynamicUser">
+				<textbox>
+					<text id="ShopLoginForm_Password" name ="password">ebsi@123</text>			
+				</textbox>
+				<click>
+				    <button id="txtboxEmailAddress" name = "txtboxEmailAddress" value="//input[@id='ShopLoginForm_Login']"/>
+				    <button id="txtboxPassword" name = "txtboxPassword" value="//input[@id='ShopLoginForm_Password']"/>
+				    <button id="btnSignIn" name = "btnSignIn" value="//button[@value='Login']"/>
+				</click>
+				<timeout id="timeout" name="timeout">5</timeout>
+			</method>
+			
+			<method name="verifyGetProfileOnSavedAddress" id="verifyGetProfileOnSavedAddress">
+				<click>
+				    <button id="existingAddress" name="existingAddress" value="(//div[@class='ish-address'])"/>
+				</click>
+				<timeout id="timeout" name="timeout">5</timeout>
+			</method>
+			
+			<method name="verifyGetProfileOnProfileSetting" id="verifyGetProfileOnProfileSetting">
+				<click>
+				    <button id="nameWithTitle" name="nameWithTitle" value="(//div[contains(@class,'flex')]//div)[1]"/>
+				    <button id="phone" name="phone" value="(//div[contains(@class,'flex')]//div)[2]"/>
+				    <button id="mobile" name="mobile" value="(//div[contains(@class,'flex')]//div)[3]"/>
+				</click>
+				<timeout id="timeout" name="timeout">5</timeout>
+			</method>
+			
+			<method name="verifyGetProfileOnProfileSetting1" id="verifyGetProfileOnProfileSetting1">
+				<click>
+				    <button id="nameWithTitle" name="nameWithTitle" value="(//div[contains(@class,'flex')]//div)[1]"/>
+				    <button id="phone" name="phone" value="(//div[contains(@class,'flex')]//div)[2]"/>
+				    <button id="mobile" name="mobile" value="(//div[contains(@class,'flex')]//div)[3]"/>
+				    <button id="birthDay" name="birthDay" value="(//div[contains(@class,'flex')]//div)[4]"/>
+				</click>
+				<timeout id="timeout" name="timeout">5</timeout>
+			</method>
+			
+		</module>
+		
+	</modules>
+</channel>

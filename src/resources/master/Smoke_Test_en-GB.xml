@@ -1,0 +1,241 @@
+<suite name="BakkerSmokeTest" verbose="10">
+	<parameter name="site" value="Test-Bakker-B2C-UK" />
+	<parameter name="environment" value="Test-en-gb" />
+	<parameter name="locale" value="en-GB" />
+	<parameter name="channel" value="en-gb" />
+	<parameter name="country" value="United Kingdom" />
+	<parameter name="selenium.host" value="localhost" />
+	<parameter name="platform" value="*windows" />
+	<parameter name="selenium.browser" value="*PhantomJS" />
+	<parameter name="PDFRequiredPerTestCase" value="true" />
+	<parameter name="testcasename" value="Test" />
+
+	<listeners>
+		<listener class-name="com.eperium.testframework.utils.SuiteReportUtils" />
+		<listener class-name="com.eperium.testframework.utils.ReportUtil" />
+		<listener class-name="org.uncommons.reportng.HTMLReporter" />
+		<listener class-name="org.uncommons.reportng.JUnitXMLReporter" />
+	</listeners>
+
+	<test name="CategoryBrowsing" preserve-order="true">
+		<classes>
+			<class name="com.eperium.main.jumpstart.JumpStartTestSuite">
+				<methods>
+					<include name="launchHomePage" />
+					<include name="mainNavigationToCategoryPage" />
+					<include name="NavigateToListerPageAndVerify" />
+					<include name="navigateToPDP_ListerPage" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="UserRegistration_MandatoryFields" preserve-order="true">
+		<classes>
+			<class name="com.eperium.main.jumpstart.JumpStartTestSuite">
+				<methods>
+					<include name="launchHomePage" />
+					<include name="navigateToRegistrationPage" />
+					<include name="registrationValidCredentials" />
+					<include name="getValuesFromRegistrationField" />
+					<include name="clickCreateAccount" />
+					<include name="navigateToSavedAddressPage" />
+					<include name="verifyGetProfileOnSavedAddress" />
+					<include name="navigateToProfileSettingPage" />
+					<include name="verifyGetProfileOnProfileSetting" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Checkout_AnonymousUser" preserve-order="true">
+		<classes>
+			<class name="com.eperium.main.jumpstart.JumpStartTestSuite">
+				<methods>
+					<include name="navigateToPDP" />
+					<include name="addToBasket" />
+					<include name="proceedToCheckout_Anonymous" />
+					<include name="navigateToAddressPage_Anonymous" />
+					<include name="fillInvoiceAddressOnCheckoutAddress" />
+					<include name="navigateToShippingPage" />
+					<include name="navigateToPaymentPage" />
+					<include name="selectPaymentMethodMasterCard" />
+					<include name="navigateToReviewPage" />
+					<include name="submitOrder" />
+					<include name="makePayment" />
+					<include name="verifySuccessfulOrder" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Checkout_loginDuringCheckout" preserve-order="true">
+		<classes>
+			<class name="com.eperium.main.jumpstart.JumpStartTestSuite">
+				<methods>
+					<include name="navigateToPDP" />
+					<include name="addToBasket" />
+					<include name="proceedToCheckout_Anonymous" />
+					<include name="loginDuringCheckout" />
+					<include name="navigateToShippingPage" />
+					<include name="navigateToPaymentPage" />
+					<include name="selectPaymentMethodMasterCard" />
+					<include name="navigateToReviewPage" />
+					<include name="submitOrder" />
+					<include name="makePayment" />
+					<include name="verifySuccessfulOrder" />
+					<include name="logoutHeader" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Checkout_RegisteredUser" preserve-order="true">
+		<classes>
+			<class name="com.eperium.main.jumpstart.JumpStartTestSuite">
+				<methods>
+					<include name="launchHomePage" />
+					<include name="navigateToLoginPage" />
+					<include name="logInWithValidCredentials" />
+					<include name="navigateToPDP" />
+					<include name="addToBasket" />
+					<include name="updateProductQuantityOnCartPage" />
+					<include name="proceedToCheckout_LoggedIn" />
+					<include name="navigateToShippingPage" />
+					<include name="navigateToPaymentPage" />
+					<include name="selectPaymentMethodVisa" />
+					<include name="navigateToReviewPage" />
+					<include name="submitOrder" />
+					<include name="makePayment" />
+					<include name="verifySuccessfulOrder" />
+					<include name="logoutHeader" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="MyAccount_AddNewAddressAndEditAddress" preserve-order="true">
+		<classes>
+			<class name="com.eperium.main.jumpstart.JumpStartTestSuite">
+				<methods>
+					<include name="launchHomePage" />
+					<include name="navigateToRegistrationPage" />
+					<include name="registrationValidCredentials" />
+					<include name="clickCreateAccount" />
+					<include name="navigateToSavedAddressPage" />
+					<include name="clickAddNewAddressLink" />
+					<include name="validateNewAddressFormFieldsOnMyAccount" />
+					<include name="fillInAddressFormOnMyAccount" />
+					<include name="createAddress" />
+					<include name="logoutHeader" />
+					<include name="navigateToLoginPage" />
+					<include name="logInWithDynamicUser" />
+					<include name="navigateToSavedAddressPage1" />
+					<include name="clickEditLinkForNormalAddress" />
+					<include name="formValidationEditAddress" />
+					<include name="fillInEditAddressFormOnMyAccount" />
+					<include name="updateAddress" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="VerifyProfileWebservice-RegisterNewUser"
+		preserve-order="true">
+		<classes>
+			<class name="com.eperium.main.jumpstart.JumpStartTestSuite">
+				<methods>
+					<include name="launchHomePage" />
+					<include name="navigateToRegistrationPage" />
+					<include name="registrationFillAllValues" />
+					<include name="getValuesFromRegistrationField" />
+					<include name="clickCreateAccount" />
+					<include name="logoutHeader" />
+					<include name="navigateToLoginPage" />
+					<include name="logInWithDynamicUser" />
+					<include name="navigateToSavedAddressPage" />
+					<include name="verifyGetProfileOnSavedAddress" />
+					<include name="navigateToProfileSettingPage" />
+					<include name="verifyGetProfileOnProfileSetting1" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="VerifyProfileWebservice-EditInvoiceAddressDuringCheckout"
+		preserve-order="true">
+		<classes>
+			<class name="com.eperium.main.jumpstart.JumpStartTestSuite">
+				<methods>
+					<include name="launchHomePage" />
+					<include name="navigateToRegistrationPage" />
+					<include name="registrationValidCredentials" />
+					<include name="clickCreateAccount" />
+					<include name="navigateToPDP" />
+					<include name="addToBasket" />
+					<include name="proceedToCheckout_LoggedIn" />
+					<include name="clickEditInvoiceLink" />
+					<include name="fillInAddressFormDuringCheckout" />
+					<include name="updateAddressOnAddressPage" />
+					<include name="logoutHeader" />
+					<include name="navigateToLoginPage" />
+					<include name="logInWithDynamicUser" />
+					<include name="navigateToSavedAddressPage" />
+					<include name="verifyGetProfileOnSavedAddress" />
+					<include name="navigateToProfileSettingPage" />
+					<include name="verifyGetProfileOnProfileSetting" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="VerifyProfileWebservice-EditShippingAddressDuringCheckout"
+		preserve-order="true">
+		<classes>
+			<class name="com.eperium.main.jumpstart.JumpStartTestSuite">
+				<methods>
+					<include name="launchHomePage" />
+					<include name="navigateToRegistrationPage" />
+					<include name="registrationValidCredentials" />
+					<include name="clickCreateAccount" />
+					<include name="navigateToPDP" />
+					<include name="addToBasket" />
+					<include name="proceedToCheckout_LoggedIn" />
+					<include name="clickEditShippingLink" />
+					<include name="fillInAddressFormDuringCheckout" />
+					<include name="updateAddressOnAddressPage" />
+					<include name="logoutHeader" />
+					<include name="navigateToLoginPage1" />
+					<include name="logInWithDynamicUser" />
+					<include name="navigateToSavedAddressPage" />
+					<include name="verifyGetProfileOnSavedAddress" />
+					<include name="navigateToProfileSettingPage" />
+					<include name="verifyGetProfileOnProfileSetting" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Checkout_RegisteredUser_AddNewAddress" preserve-order="true">
+		<classes>
+			<class name="com.eperium.main.jumpstart.JumpStartTestSuite">
+				<methods>
+					<include name="launchHomePage" />
+					<include name="navigateToRegistrationPage" />
+					<include name="registrationValidCredentials" />
+					<include name="clickCreateAccount" />
+					<include name="navigateToPDP" />
+					<include name="addToBasket" />
+					<include name="proceedToCheckout_LoggedIn" />
+					<include name="clickAddNewShipAddressLink" />
+					<include name="fillInAddressFormDuringCheckout" />
+					<include name="updateAddressOnAddressPage" />
+					<include name="verifySidePanelAddress" />
+					<include name="navigateToShippingPage" />
+					<include name="verifySidePanelAddress1" />
+					<include name="navigateToPaymentPage" />
+					<include name="verifySidePanelAddress2" />
+					<include name="selectPaymentMethodVisa" />
+					<include name="navigateToReviewPage" />
+					<include name="verifySidePanelAddress3" />
+					<include name="submitOrder" />
+					<include name="makePayment" />
+					<include name="verifySuccessfulOrder" />
+					<include name="verifySidePanelAddress4" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+</suite>

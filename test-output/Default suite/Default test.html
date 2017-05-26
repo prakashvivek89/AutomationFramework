@@ -1,0 +1,448 @@
+<html>
+<head>
+<title>TestNG:  Default test</title>
+<link href="../testng.css" rel="stylesheet" type="text/css" />
+<link href="../my-testng.css" rel="stylesheet" type="text/css" />
+
+<style type="text/css">
+.log { display: none;} 
+.stack-trace { display: none;} 
+</style>
+<script type="text/javascript">
+<!--
+function flip(e) {
+  current = e.style.display;
+  if (current == 'block') {
+    e.style.display = 'none';
+    return 0;
+  }
+  else {
+    e.style.display = 'block';
+    return 1;
+  }
+}
+
+function toggleBox(szDivId, elem, msg1, msg2)
+{
+  var res = -1;  if (document.getElementById) {
+    res = flip(document.getElementById(szDivId));
+  }
+  else if (document.all) {
+    // this is the way old msie versions work
+    res = flip(document.all[szDivId]);
+  }
+  if(elem) {
+    if(res == 0) elem.innerHTML = msg1; else elem.innerHTML = msg2;
+  }
+
+}
+
+function toggleAllBoxes() {
+  if (document.getElementsByTagName) {
+    d = document.getElementsByTagName('div');
+    for (i = 0; i < d.length; i++) {
+      if (d[i].className == 'log') {
+        flip(d[i]);
+      }
+    }
+  }
+}
+
+// -->
+</script>
+
+</head>
+<body>
+<h2 align='center'>Default test</h2><table border='1' align="center">
+<tr>
+<td>Tests passed/Failed/Skipped:</td><td>0/0/59</td>
+</tr><tr>
+<td>Started on:</td><td>Wed Sep 14 14:55:57 IST 2016</td>
+</tr>
+<tr><td>Total time:</td><td>0 seconds (336 ms)</td>
+</tr><tr>
+<td>Included groups:</td><td></td>
+</tr><tr>
+<td>Excluded groups:</td><td></td>
+</tr>
+</table><p/>
+<small><i>(Hover the method name to see the test class name)</i></small><p/>
+<table width='100%' border='1' class='invocation-failed'>
+<tr><td colspan='4' align='center'><b>FAILED CONFIGURATIONS</b></td></tr>
+<tr><td><b>Test method</b></td>
+<td width="30%"><b>Exception</b></td>
+<td width="10%"><b>Time (seconds)</b></td>
+<td><b>Instance</b></td>
+</tr>
+<tr>
+<td title='com.eperium.main.jumpstart.JumpStartTestSuite.setupBeforeSuite()'><b>setupBeforeSuite</b><br>Test class: com.eperium.main.jumpstart.JumpStartTestSuite<br>Parameters: org.testng.TestRunner@5b0508f3</td>
+<td><div><pre>java.lang.NullPointerException
+	at java.util.Hashtable.hash(Unknown Source)
+	at java.util.Hashtable.get(Unknown Source)
+	at java.util.Properties.getProperty(Unknown Source)
+	at com.eperium.testframework.utils.PropertyLoader.getUrlPropertiesFile(PropertyLoader.java:54)
+	at com.eperium.main.jumpstart.JumpStartTestSuite.setupBeforeSuite(JumpStartTestSuite.java:93)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:85)
+	at org.testng.internal.Invoker.invokeConfigurationMethod(Invoker.java:510)
+	at org.testng.internal.Invoker.invokeConfigurations(Invoker.java:211)
+	at org.testng.internal.Invoker.invokeConfigurations(Invoker.java:138)
+	at org.testng.internal.TestMethodWorker.invokeBeforeClassMethods(TestMethodWorker.java:170)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:104)
+	at org.testng.TestRunner.privateRun(TestRunner.java:774)
+	at org.testng.TestRunner.run(TestRunner.java:624)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:359)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:354)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:312)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:261)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1215)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1140)
+	at org.testng.TestNG.run(TestNG.java:1048)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:126)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:152)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:57)
+</pre></div><a href='#' onClick='toggleBox("stack-trace1718705476", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1718705476'><pre>java.lang.NullPointerException
+	at java.util.Hashtable.hash(Unknown Source)
+	at java.util.Hashtable.get(Unknown Source)
+	at java.util.Properties.getProperty(Unknown Source)
+	at com.eperium.testframework.utils.PropertyLoader.getUrlPropertiesFile(PropertyLoader.java:54)
+	at com.eperium.main.jumpstart.JumpStartTestSuite.setupBeforeSuite(JumpStartTestSuite.java:93)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:85)
+	at org.testng.internal.Invoker.invokeConfigurationMethod(Invoker.java:510)
+	at org.testng.internal.Invoker.invokeConfigurations(Invoker.java:211)
+	at org.testng.internal.Invoker.invokeConfigurations(Invoker.java:138)
+	at org.testng.internal.TestMethodWorker.invokeBeforeClassMethods(TestMethodWorker.java:170)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:104)
+	at org.testng.TestRunner.privateRun(TestRunner.java:774)
+	at org.testng.TestRunner.run(TestRunner.java:624)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:359)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:354)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:312)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:261)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1215)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1140)
+	at org.testng.TestNG.run(TestNG.java:1048)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:126)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:152)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:57)
+</pre></div></td>
+<td>0</td>
+<td>com.eperium.main.jumpstart.JumpStartTestSuite@347ad394</td></tr>
+</table><p>
+<table width='100%' border='1' class='invocation-skipped'>
+<tr><td colspan='4' align='center'><b>SKIPPED TESTS</b></td></tr>
+<tr><td><b>Test method</b></td>
+<td width="30%"><b>Exception</b></td>
+<td width="10%"><b>Time (seconds)</b></td>
+<td><b>Instance</b></td>
+</tr>
+<tr>
+<td title='com.eperium.main.jumpstart.JumpStartTestSuite.NavigateToListerPageAndVerify()'><b>NavigateToListerPageAndVerify</b><br>Test class: com.eperium.main.jumpstart.JumpStartTestSuite<br>Test method: Select a sub-category and navigate to Lister page</td>
+<td></td>
+<td>0</td>
+<td>com.eperium.main.jumpstart.JumpStartTestSuite@347ad394</td></tr>
+<tr>
+<td title='com.eperium.main.jumpstart.JumpStartTestSuite.addToBasket()'><b>addToBasket</b><br>Test class: com.eperium.main.jumpstart.JumpStartTestSuite<br>Test method: Click add to cart button and varify that product is added correctly</td>
+<td></td>
+<td>0</td>
+<td>com.eperium.main.jumpstart.JumpStartTestSuite@347ad394</td></tr>
+<tr>
+<td title='com.eperium.main.jumpstart.JumpStartTestSuite.clickAddNewAddressLink()'><b>clickAddNewAddressLink</b><br>Test class: com.eperium.main.jumpstart.JumpStartTestSuite<br>Test method: Navigate to new address page and verify all existing addresses are displayed</td>
+<td></td>
+<td>0</td>
+<td>com.eperium.main.jumpstart.JumpStartTestSuite@347ad394</td></tr>
+<tr>
+<td title='com.eperium.main.jumpstart.JumpStartTestSuite.clickAddNewShipAddressLink()'><b>clickAddNewShipAddressLink</b><br>Test class: com.eperium.main.jumpstart.JumpStartTestSuite<br>Test method: Click add new ship address link on checkout address page</td>
+<td></td>
+<td>0</td>
+<td>com.eperium.main.jumpstart.JumpStartTestSuite@347ad394</td></tr>
+<tr>
+<td title='com.eperium.main.jumpstart.JumpStartTestSuite.clickCreateAccount()'><b>clickCreateAccount</b><br>Test class: com.eperium.main.jumpstart.JumpStartTestSuite<br>Test method: Click create account button</td>
+<td></td>
+<td>0</td>
+<td>com.eperium.main.jumpstart.JumpStartTestSuite@347ad394</td></tr>
+<tr>
+<td title='com.eperium.main.jumpstart.JumpStartTestSuite.clickEditInvoiceLink()'><b>clickEditInvoiceLink</b><br>Test class: com.eperium.main.jumpstart.JumpStartTestSuite<br>Test method: Click edit invoice link on checkout</td>
+<td></td>
+<td>0</td>
+<td>com.eperium.main.jumpstart.JumpStartTestSuite@347ad394</td></tr>
+<tr>
+<td title='com.eperium.main.jumpstart.JumpStartTestSuite.clickEditLinkForNormalAddress()'><b>clickEditLinkForNormalAddress</b><br>Test class: com.eperium.main.jumpstart.JumpStartTestSuite<br>Test method: Navigate to edit address page and verify all existing addresses are displayed</td>
+<td></td>
+<td>0</td>
+<td>com.eperium.main.jumpstart.JumpStartTestSuite@347ad394</td></tr>
+<tr>
+<td title='com.eperium.main.jumpstart.JumpStartTestSuite.clickEditShippingLink()'><b>clickEditShippingLink</b><br>Test class: com.eperium.main.jumpstart.JumpStartTestSuite<br>Test method: Click edit shipping address link on checkout address page</td>
+<td></td>
+<td>0</td>
+<td>com.eperium.main.jumpstart.JumpStartTestSuite@347ad394</td></tr>
+<tr>
+<td title='com.eperium.main.jumpstart.JumpStartTestSuite.createAddress()'><b>createAddress</b><br>Test class: com.eperium.main.jumpstart.JumpStartTestSuite<br>Test method: Submit the new address and verify</td>
+<td></td>
+<td>0</td>
+<td>com.eperium.main.jumpstart.JumpStartTestSuite@347ad394</td></tr>
+<tr>
+<td title='com.eperium.main.jumpstart.JumpStartTestSuite.fillInAddressFormDuringCheckout()'><b>fillInAddressFormDuringCheckout</b><br>Test class: com.eperium.main.jumpstart.JumpStartTestSuite<br>Test method: Edit invoice address: Check form fields and validate form values are pre-filled</td>
+<td></td>
+<td>0</td>
+<td>com.eperium.main.jumpstart.JumpStartTestSuite@347ad394</td></tr>
+<tr>
+<td title='com.eperium.main.jumpstart.JumpStartTestSuite.fillInAddressFormOnMyAccount()'><b>fillInAddressFormOnMyAccount</b><br>Test class: com.eperium.main.jumpstart.JumpStartTestSuite<br>Test method: Fill Form</td>
+<td></td>
+<td>0</td>
+<td>com.eperium.main.jumpstart.JumpStartTestSuite@347ad394</td></tr>
+<tr>
+<td title='com.eperium.main.jumpstart.JumpStartTestSuite.fillInEditAddressFormOnMyAccount()'><b>fillInEditAddressFormOnMyAccount</b><br>Test class: com.eperium.main.jumpstart.JumpStartTestSuite<br>Test method: Fill edit address form on my account page</td>
+<td></td>
+<td>0</td>
+<td>com.eperium.main.jumpstart.JumpStartTestSuite@347ad394</td></tr>
+<tr>
+<td title='com.eperium.main.jumpstart.JumpStartTestSuite.fillInvoiceAddressOnCheckoutAddress()'><b>fillInvoiceAddressOnCheckoutAddress</b><br>Test class: com.eperium.main.jumpstart.JumpStartTestSuite<br>Test method: Fill the invoice address</td>
+<td></td>
+<td>0</td>
+<td>com.eperium.main.jumpstart.JumpStartTestSuite@347ad394</td></tr>
+<tr>
+<td title='com.eperium.main.jumpstart.JumpStartTestSuite.formValidationEditAddress()'><b>formValidationEditAddress</b><br>Test class: com.eperium.main.jumpstart.JumpStartTestSuite<br>Test method: Check form fields and validate form values are pre-filled</td>
+<td></td>
+<td>0</td>
+<td>com.eperium.main.jumpstart.JumpStartTestSuite@347ad394</td></tr>
+<tr>
+<td title='com.eperium.main.jumpstart.JumpStartTestSuite.getValuesFromRegistrationField()'><b>getValuesFromRegistrationField</b><br>Test class: com.eperium.main.jumpstart.JumpStartTestSuite<br>Test method: Get all values from registration field to verify</td>
+<td></td>
+<td>0</td>
+<td>com.eperium.main.jumpstart.JumpStartTestSuite@347ad394</td></tr>
+<tr>
+<td title='com.eperium.main.jumpstart.JumpStartTestSuite.launchHomePage()'><b>launchHomePage</b><br>Test class: com.eperium.main.jumpstart.JumpStartTestSuite<br>Test method: Launch Home Page</td>
+<td></td>
+<td>0</td>
+<td>com.eperium.main.jumpstart.JumpStartTestSuite@347ad394</td></tr>
+<tr>
+<td title='com.eperium.main.jumpstart.JumpStartTestSuite.logInWithDynamicUser()'><b>logInWithDynamicUser</b><br>Test class: com.eperium.main.jumpstart.JumpStartTestSuite<br>Test method: logIn With Dynamic User</td>
+<td></td>
+<td>0</td>
+<td>com.eperium.main.jumpstart.JumpStartTestSuite@347ad394</td></tr>
+<tr>
+<td title='com.eperium.main.jumpstart.JumpStartTestSuite.logInWithValidCredentials()'><b>logInWithValidCredentials</b><br>Test class: com.eperium.main.jumpstart.JumpStartTestSuite<br>Test method: Login with valid user</td>
+<td></td>
+<td>0</td>
+<td>com.eperium.main.jumpstart.JumpStartTestSuite@347ad394</td></tr>
+<tr>
+<td title='com.eperium.main.jumpstart.JumpStartTestSuite.logInWithValidCredentials1()'><b>logInWithValidCredentials1</b><br>Test class: com.eperium.main.jumpstart.JumpStartTestSuite<br>Test method: Login with valid user</td>
+<td></td>
+<td>0</td>
+<td>com.eperium.main.jumpstart.JumpStartTestSuite@347ad394</td></tr>
+<tr>
+<td title='com.eperium.main.jumpstart.JumpStartTestSuite.loginDuringCheckout()'><b>loginDuringCheckout</b><br>Test class: com.eperium.main.jumpstart.JumpStartTestSuite<br>Test method: login during checkout</td>
+<td></td>
+<td>0</td>
+<td>com.eperium.main.jumpstart.JumpStartTestSuite@347ad394</td></tr>
+<tr>
+<td title='com.eperium.main.jumpstart.JumpStartTestSuite.logoutHeader()'><b>logoutHeader</b><br>Test class: com.eperium.main.jumpstart.JumpStartTestSuite<br>Test method: Logout from header</td>
+<td></td>
+<td>0</td>
+<td>com.eperium.main.jumpstart.JumpStartTestSuite@347ad394</td></tr>
+<tr>
+<td title='com.eperium.main.jumpstart.JumpStartTestSuite.mainNavigationToCategoryPage()'><b>mainNavigationToCategoryPage</b><br>Test class: com.eperium.main.jumpstart.JumpStartTestSuite<br>Test method: Select a category and navigate to sub-category page</td>
+<td></td>
+<td>0</td>
+<td>com.eperium.main.jumpstart.JumpStartTestSuite@347ad394</td></tr>
+<tr>
+<td title='com.eperium.main.jumpstart.JumpStartTestSuite.makePayment()'><b>makePayment</b><br>Test class: com.eperium.main.jumpstart.JumpStartTestSuite<br>Test method: Make Payment</td>
+<td></td>
+<td>0</td>
+<td>com.eperium.main.jumpstart.JumpStartTestSuite@347ad394</td></tr>
+<tr>
+<td title='com.eperium.main.jumpstart.JumpStartTestSuite.navigateToLoginPage()'><b>navigateToLoginPage</b><br>Test class: com.eperium.main.jumpstart.JumpStartTestSuite<br>Test method: Navigate to login page</td>
+<td></td>
+<td>0</td>
+<td>com.eperium.main.jumpstart.JumpStartTestSuite@347ad394</td></tr>
+<tr>
+<td title='com.eperium.main.jumpstart.JumpStartTestSuite.navigateToLoginPage1()'><b>navigateToLoginPage1</b><br>Test class: com.eperium.main.jumpstart.JumpStartTestSuite<br>Test method: Navigate to login page</td>
+<td></td>
+<td>0</td>
+<td>com.eperium.main.jumpstart.JumpStartTestSuite@347ad394</td></tr>
+<tr>
+<td title='com.eperium.main.jumpstart.JumpStartTestSuite.navigateToPDP()'><b>navigateToPDP</b><br>Test class: com.eperium.main.jumpstart.JumpStartTestSuite<br>Test method: Navigate to PDP page</td>
+<td></td>
+<td>0</td>
+<td>com.eperium.main.jumpstart.JumpStartTestSuite@347ad394</td></tr>
+<tr>
+<td title='com.eperium.main.jumpstart.JumpStartTestSuite.navigateToPDP_ListerPage()'><b>navigateToPDP_ListerPage</b><br>Test class: com.eperium.main.jumpstart.JumpStartTestSuite<br>Test method: Navigate to PDP from lister page</td>
+<td></td>
+<td>0</td>
+<td>com.eperium.main.jumpstart.JumpStartTestSuite@347ad394</td></tr>
+<tr>
+<td title='com.eperium.main.jumpstart.JumpStartTestSuite.navigateToPaymentPage()'><b>navigateToPaymentPage</b><br>Test class: com.eperium.main.jumpstart.JumpStartTestSuite<br>Test method: Navigate to Payment page and verify</td>
+<td></td>
+<td>0</td>
+<td>com.eperium.main.jumpstart.JumpStartTestSuite@347ad394</td></tr>
+<tr>
+<td title='com.eperium.main.jumpstart.JumpStartTestSuite.navigateToProfileSettingPage()'><b>navigateToProfileSettingPage</b><br>Test class: com.eperium.main.jumpstart.JumpStartTestSuite<br>Test method: Navigate To Profile Setting Page</td>
+<td></td>
+<td>0</td>
+<td>com.eperium.main.jumpstart.JumpStartTestSuite@347ad394</td></tr>
+<tr>
+<td title='com.eperium.main.jumpstart.JumpStartTestSuite.navigateToProfileSettingPage1()'><b>navigateToProfileSettingPage1</b><br>Test class: com.eperium.main.jumpstart.JumpStartTestSuite<br>Test method: Navigate To Profile Setting Page</td>
+<td></td>
+<td>0</td>
+<td>com.eperium.main.jumpstart.JumpStartTestSuite@347ad394</td></tr>
+<tr>
+<td title='com.eperium.main.jumpstart.JumpStartTestSuite.navigateToRegistrationPage()'><b>navigateToRegistrationPage</b><br>Test class: com.eperium.main.jumpstart.JumpStartTestSuite<br>Test method: Navigate to Registration page</td>
+<td></td>
+<td>0</td>
+<td>com.eperium.main.jumpstart.JumpStartTestSuite@347ad394</td></tr>
+<tr>
+<td title='com.eperium.main.jumpstart.JumpStartTestSuite.navigateToReviewPage()'><b>navigateToReviewPage</b><br>Test class: com.eperium.main.jumpstart.JumpStartTestSuite<br>Test method: Navigate to Payment page and verify</td>
+<td></td>
+<td>0</td>
+<td>com.eperium.main.jumpstart.JumpStartTestSuite@347ad394</td></tr>
+<tr>
+<td title='com.eperium.main.jumpstart.JumpStartTestSuite.navigateToSavedAddressPage()'><b>navigateToSavedAddressPage</b><br>Test class: com.eperium.main.jumpstart.JumpStartTestSuite<br>Test method: Navigate To Saved Address Page</td>
+<td></td>
+<td>0</td>
+<td>com.eperium.main.jumpstart.JumpStartTestSuite@347ad394</td></tr>
+<tr>
+<td title='com.eperium.main.jumpstart.JumpStartTestSuite.navigateToSavedAddressPage1()'><b>navigateToSavedAddressPage1</b><br>Test class: com.eperium.main.jumpstart.JumpStartTestSuite<br>Test method: Navigate To Saved Address Page</td>
+<td></td>
+<td>0</td>
+<td>com.eperium.main.jumpstart.JumpStartTestSuite@347ad394</td></tr>
+<tr>
+<td title='com.eperium.main.jumpstart.JumpStartTestSuite.navigateToShippingPage()'><b>navigateToShippingPage</b><br>Test class: com.eperium.main.jumpstart.JumpStartTestSuite<br>Test method: Navigate to shipping page and verify</td>
+<td></td>
+<td>0</td>
+<td>com.eperium.main.jumpstart.JumpStartTestSuite@347ad394</td></tr>
+<tr>
+<td title='com.eperium.main.jumpstart.JumpStartTestSuite.proceedToCheckout()'><b>proceedToCheckout</b><br>Test class: com.eperium.main.jumpstart.JumpStartTestSuite<br>Test method: Increase Product quantity and click Proceed to checkout button and verify</td>
+<td></td>
+<td>0</td>
+<td>com.eperium.main.jumpstart.JumpStartTestSuite@347ad394</td></tr>
+<tr>
+<td title='com.eperium.main.jumpstart.JumpStartTestSuite.registrationFillAllValues()'><b>registrationFillAllValues</b><br>Test class: com.eperium.main.jumpstart.JumpStartTestSuite<br>Test method: Register with filling all values</td>
+<td></td>
+<td>0</td>
+<td>com.eperium.main.jumpstart.JumpStartTestSuite@347ad394</td></tr>
+<tr>
+<td title='com.eperium.main.jumpstart.JumpStartTestSuite.registrationValidCredentials()'><b>registrationValidCredentials</b><br>Test class: com.eperium.main.jumpstart.JumpStartTestSuite<br>Test method: Register with valid credentials</td>
+<td></td>
+<td>0</td>
+<td>com.eperium.main.jumpstart.JumpStartTestSuite@347ad394</td></tr>
+<tr>
+<td title='com.eperium.main.jumpstart.JumpStartTestSuite.selectPaymentMethodInvoice()'><b>selectPaymentMethodInvoice</b><br>Test class: com.eperium.main.jumpstart.JumpStartTestSuite<br>Test method: select a payment method as invoice</td>
+<td></td>
+<td>0</td>
+<td>com.eperium.main.jumpstart.JumpStartTestSuite@347ad394</td></tr>
+<tr>
+<td title='com.eperium.main.jumpstart.JumpStartTestSuite.selectPaymentMethodMasterCard()'><b>selectPaymentMethodMasterCard</b><br>Test class: com.eperium.main.jumpstart.JumpStartTestSuite<br>Test method: select a payment method as MasterCard</td>
+<td></td>
+<td>0</td>
+<td>com.eperium.main.jumpstart.JumpStartTestSuite@347ad394</td></tr>
+<tr>
+<td title='com.eperium.main.jumpstart.JumpStartTestSuite.selectPaymentMethodOneTimeAuthorization()'><b>selectPaymentMethodOneTimeAuthorization</b><br>Test class: com.eperium.main.jumpstart.JumpStartTestSuite<br>Test method: select a payment method as One Time Authorization</td>
+<td></td>
+<td>0</td>
+<td>com.eperium.main.jumpstart.JumpStartTestSuite@347ad394</td></tr>
+<tr>
+<td title='com.eperium.main.jumpstart.JumpStartTestSuite.selectPaymentMethodVisa()'><b>selectPaymentMethodVisa</b><br>Test class: com.eperium.main.jumpstart.JumpStartTestSuite<br>Test method: select a payment method as Visa</td>
+<td></td>
+<td>0</td>
+<td>com.eperium.main.jumpstart.JumpStartTestSuite@347ad394</td></tr>
+<tr>
+<td title='com.eperium.main.jumpstart.JumpStartTestSuite.submitOrder()'><b>submitOrder</b><br>Test class: com.eperium.main.jumpstart.JumpStartTestSuite<br>Test method: Enter Payment Credentials And Navigate To ReciptPage</td>
+<td></td>
+<td>0</td>
+<td>com.eperium.main.jumpstart.JumpStartTestSuite@347ad394</td></tr>
+<tr>
+<td title='com.eperium.main.jumpstart.JumpStartTestSuite.updateAddress()'><b>updateAddress</b><br>Test class: com.eperium.main.jumpstart.JumpStartTestSuite<br>Test method: update address on My Account page and verify</td>
+<td></td>
+<td>0</td>
+<td>com.eperium.main.jumpstart.JumpStartTestSuite@347ad394</td></tr>
+<tr>
+<td title='com.eperium.main.jumpstart.JumpStartTestSuite.updateAddressOnAddressPage()'><b>updateAddressOnAddressPage</b><br>Test class: com.eperium.main.jumpstart.JumpStartTestSuite<br>Test method: Update invoice address and verify</td>
+<td></td>
+<td>0</td>
+<td>com.eperium.main.jumpstart.JumpStartTestSuite@347ad394</td></tr>
+<tr>
+<td title='com.eperium.main.jumpstart.JumpStartTestSuite.updateProductQuantity()'><b>updateProductQuantity</b><br>Test class: com.eperium.main.jumpstart.JumpStartTestSuite<br>Test method: Update product quantity on PDP page</td>
+<td></td>
+<td>0</td>
+<td>com.eperium.main.jumpstart.JumpStartTestSuite@347ad394</td></tr>
+<tr>
+<td title='com.eperium.main.jumpstart.JumpStartTestSuite.updateProductQuantityOnCartPage()'><b>updateProductQuantityOnCartPage</b><br>Test class: com.eperium.main.jumpstart.JumpStartTestSuite<br>Test method: Update product quantity on PDP page</td>
+<td></td>
+<td>0</td>
+<td>com.eperium.main.jumpstart.JumpStartTestSuite@347ad394</td></tr>
+<tr>
+<td title='com.eperium.main.jumpstart.JumpStartTestSuite.validateNewAddressFormFieldsOnMyAccount()'><b>validateNewAddressFormFieldsOnMyAccount</b><br>Test class: com.eperium.main.jumpstart.JumpStartTestSuite<br>Test method: Validate Form Fields And Fill Form</td>
+<td></td>
+<td>0</td>
+<td>com.eperium.main.jumpstart.JumpStartTestSuite@347ad394</td></tr>
+<tr>
+<td title='com.eperium.main.jumpstart.JumpStartTestSuite.verifyGetProfileOnProfileSetting()'><b>verifyGetProfileOnProfileSetting</b><br>Test class: com.eperium.main.jumpstart.JumpStartTestSuite<br>Test method: verify getProfile</td>
+<td></td>
+<td>0</td>
+<td>com.eperium.main.jumpstart.JumpStartTestSuite@347ad394</td></tr>
+<tr>
+<td title='com.eperium.main.jumpstart.JumpStartTestSuite.verifyGetProfileOnProfileSetting1()'><b>verifyGetProfileOnProfileSetting1</b><br>Test class: com.eperium.main.jumpstart.JumpStartTestSuite<br>Test method: verify getProfile with birth date information</td>
+<td></td>
+<td>0</td>
+<td>com.eperium.main.jumpstart.JumpStartTestSuite@347ad394</td></tr>
+<tr>
+<td title='com.eperium.main.jumpstart.JumpStartTestSuite.verifyGetProfileOnProfileSetting2()'><b>verifyGetProfileOnProfileSetting2</b><br>Test class: com.eperium.main.jumpstart.JumpStartTestSuite<br>Test method: verify getProfile with birth date information</td>
+<td></td>
+<td>0</td>
+<td>com.eperium.main.jumpstart.JumpStartTestSuite@347ad394</td></tr>
+<tr>
+<td title='com.eperium.main.jumpstart.JumpStartTestSuite.verifyGetProfileOnSavedAddress()'><b>verifyGetProfileOnSavedAddress</b><br>Test class: com.eperium.main.jumpstart.JumpStartTestSuite<br>Test method: verify getProfile</td>
+<td></td>
+<td>0</td>
+<td>com.eperium.main.jumpstart.JumpStartTestSuite@347ad394</td></tr>
+<tr>
+<td title='com.eperium.main.jumpstart.JumpStartTestSuite.verifyGetProfileOnSavedAddress1()'><b>verifyGetProfileOnSavedAddress1</b><br>Test class: com.eperium.main.jumpstart.JumpStartTestSuite<br>Test method: verify getProfile after relogin</td>
+<td></td>
+<td>0</td>
+<td>com.eperium.main.jumpstart.JumpStartTestSuite@347ad394</td></tr>
+<tr>
+<td title='com.eperium.main.jumpstart.JumpStartTestSuite.verifySidePanelAddress()'><b>verifySidePanelAddress</b><br>Test class: com.eperium.main.jumpstart.JumpStartTestSuite<br>Test method: Verify address on sidepanel during checkout</td>
+<td></td>
+<td>0</td>
+<td>com.eperium.main.jumpstart.JumpStartTestSuite@347ad394</td></tr>
+<tr>
+<td title='com.eperium.main.jumpstart.JumpStartTestSuite.verifySidePanelAddress1()'><b>verifySidePanelAddress1</b><br>Test class: com.eperium.main.jumpstart.JumpStartTestSuite<br>Test method: Verify address on sidepanel during checkout</td>
+<td></td>
+<td>0</td>
+<td>com.eperium.main.jumpstart.JumpStartTestSuite@347ad394</td></tr>
+<tr>
+<td title='com.eperium.main.jumpstart.JumpStartTestSuite.verifySidePanelAddress2()'><b>verifySidePanelAddress2</b><br>Test class: com.eperium.main.jumpstart.JumpStartTestSuite<br>Test method: Verify address on sidepanel during checkout</td>
+<td></td>
+<td>0</td>
+<td>com.eperium.main.jumpstart.JumpStartTestSuite@347ad394</td></tr>
+<tr>
+<td title='com.eperium.main.jumpstart.JumpStartTestSuite.verifySidePanelAddress3()'><b>verifySidePanelAddress3</b><br>Test class: com.eperium.main.jumpstart.JumpStartTestSuite<br>Test method: Verify address on sidepanel during checkout</td>
+<td></td>
+<td>0</td>
+<td>com.eperium.main.jumpstart.JumpStartTestSuite@347ad394</td></tr>
+<tr>
+<td title='com.eperium.main.jumpstart.JumpStartTestSuite.verifySidePanelAddress4()'><b>verifySidePanelAddress4</b><br>Test class: com.eperium.main.jumpstart.JumpStartTestSuite<br>Test method: Verify address on sidepanel during checkout</td>
+<td></td>
+<td>0</td>
+<td>com.eperium.main.jumpstart.JumpStartTestSuite@347ad394</td></tr>
+<tr>
+<td title='com.eperium.main.jumpstart.JumpStartTestSuite.verifySuccessfulOrder()'><b>verifySuccessfulOrder</b><br>Test class: com.eperium.main.jumpstart.JumpStartTestSuite<br>Test method: Verify order is placed successfully</td>
+<td></td>
+<td>0</td>
+<td>com.eperium.main.jumpstart.JumpStartTestSuite@347ad394</td></tr>
+</table><p>
+</body>
+</html>

@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
+  <test name="Default test(failed)">
+    <classes>
+      <class name="com.eperium.main.jumpstart.JumpStartTestSuite">
+        <methods>
+          <include name="clickAddNewAddressLink"/>
+          <include name="navigateToPaymentPage"/>
+          <include name="navigateToLoginPage"/>
+          <include name="navigateToReviewPage"/>
+          <include name="navigateToProfileSettingPage"/>
+          <include name="updateProductQuantity"/>
+          <include name="clickEditLinkForNormalAddress"/>
+          <include name="clickEditShippingLink"/>
+          <include name="validateNewAddressFormFieldsOnMyAccount"/>
+          <include name="verifyGetProfileOnSavedAddress1"/>
+          <include name="logoutHeader"/>
+          <include name="makePayment"/>
+          <include name="navigateToSavedAddressPage1"/>
+          <include name="setupBeforeSuite"/>
+          <include name="submitOrder"/>
+          <include name="selectPaymentMethodVisa"/>
+          <include name="clickEditInvoiceLink"/>
+          <include name="navigateToPDP"/>
+          <include name="verifySidePanelAddress3"/>
+          <include name="navigateToSavedAddressPage"/>
+          <include name="verifySidePanelAddress4"/>
+          <include name="logInWithValidCredentials"/>
+          <include name="verifySidePanelAddress1"/>
+          <include name="verifySidePanelAddress2"/>
+          <include name="updateProductQuantityOnCartPage"/>
+          <include name="clickAddNewShipAddressLink"/>
+          <include name="navigateToLoginPage1"/>
+          <include name="clickCreateAccount"/>
+          <include name="verifySuccessfulOrder"/>
+          <include name="selectPaymentMethodMasterCard"/>
+          <include name="verifyGetProfileOnProfileSetting"/>
+          <include name="updateAddress"/>
+          <include name="mainNavigationToCategoryPage"/>
+          <include name="selectPaymentMethodInvoice"/>
+          <include name="registrationValidCredentials"/>
+          <include name="addToBasket"/>
+          <include name="fillInEditAddressFormOnMyAccount"/>
+          <include name="fillInvoiceAddressOnCheckoutAddress"/>
+          <include name="navigateToShippingPage"/>
+          <include name="getValuesFromRegistrationField"/>
+          <include name="setupAfterSuite"/>
+          <include name="verifySidePanelAddress"/>
+          <include name="proceedToCheckout"/>
+          <include name="launchHomePage"/>
+          <include name="verifyGetProfileOnProfileSetting2"/>
+          <include name="formValidationEditAddress"/>
+          <include name="navigateToRegistrationPage"/>
+          <include name="verifyGetProfileOnSavedAddress"/>
+          <include name="navigateToPDP_ListerPage"/>
+          <include name="NavigateToListerPageAndVerify"/>
+          <include name="loginDuringCheckout"/>
+          <include name="fillInAddressFormDuringCheckout"/>
+          <include name="navigateToProfileSettingPage1"/>
+          <include name="registrationFillAllValues"/>
+          <include name="selectPaymentMethodOneTimeAuthorization"/>
+          <include name="fillInAddressFormOnMyAccount"/>
+          <include name="verifyGetProfileOnProfileSetting1"/>
+          <include name="logInWithDynamicUser"/>
+          <include name="createAddress"/>
+          <include name="updateAddressOnAddressPage"/>
+          <include name="logInWithValidCredentials1"/>
+        </methods>
+      </class> <!-- com.eperium.main.jumpstart.JumpStartTestSuite -->
+    </classes>
+  </test> <!-- Default test(failed) -->
+</suite> <!-- Failed suite [Default suite] -->
