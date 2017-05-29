@@ -37,7 +37,6 @@ public class VisibleTextElement extends ValidateableXMLElement {
 	}
 	
 	public boolean getLocator(WebDriver driver, String value){
-		if(driver.findElement(By.xpath(value)).isDisplayed()){
-			
-		}
+			return driver.findElement(By.xpath(value)).isDisplayed(); 
+	}
 }
