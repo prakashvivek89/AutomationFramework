@@ -21,14 +21,6 @@
 				<timeout id="timeout" name="timeout">5</timeout>
 			</method>
 			
-		    <method name="updateProductQuantityOnCartPage" id="updateProductQuantityOnCartPage">
-			    <click>
-			        <button id="productQuantityOnBasketPage" name = "productQuantityOnBasketPage" value="//input[contains(@id,'quantity_')]"/>
-			        <button id="btnUpdateOnBasketPage" name = "btnUpdateOnBasketPage" value="//button[@name='update'][contains(@class,'ish-shiftContent')]"/>
-			    </click>
-				<timeout id="timeout" name="timeout">5</timeout>
-			</method>
-		    		
 		    <method name="addToBasket" id="addToBasket">
 			    <click>
 			        <button id="prodcutNameOnPDP" name = "prodcutNameOnPDP" value="//div[@class='grid-18']//h1"/>
@@ -207,109 +199,7 @@
 				    <button id="btnContinueShopping" name = "btnContinueShopping" value="//a[contains(@class,'ish-bar-actionButton')]"/>
 				</click>
 				<timeout id="timeout" name="timeout">5</timeout>
-			</method>
-			
-			<method name="clickEditInvoiceLink" id="clickEditInvoiceLink">
-				<Elements>
-				    <button id="addressForm" name = "addressForm" value="//tr[@style='display: table;']//form[contains(@action,'ViewCheckoutAddresses-Dispatch')]"/>
-				    <button id="txtboxFirstName" name = "txtboxFirstName" value="//tr[@style='display: table;']//input[@id='address_FirstName']"/>
-			        <button id="txtboxSecondName" name = "txtboxSecondName" value="//tr[@style='display: table;']//input[@id='address_LastName']"/>
-			        <button id="txtboxHNo" name = "txtboxHNo" value="//tr[@style='display: table;']//input[@id='address_HouseNumber']"/>
-			        <button id="txtboxPostalCode" name = "txtboxPostalCode" value="//tr[@style='display: table;']//input[@id='address_PostalCode']"/>
-				    <button id="drpDownTitle" name = "drpDownTitle" value="//tr[@style='display: table;']//select[@id='address_Title']"/>
-				    <button id="btnUpdateAddress" name = "btnUpdateAddress" value="//tr[@style='display: table;']//button[@name='updateAddress']"/>
-				    <button id="txtboxHomePhone" name="txtboxHomePhone" value="//tr[@style='display: table;']//input[@id='address_PhoneHome']"/>
-				    <button id="txtboxMobilePhone" name="txtboxMobilePhone" value="//tr[@style='display: table;']//input[@id='address_PhoneMobile']"/>
-				</Elements>
-				<click>
-					<button id="linkEditInvoiceAddress" name = "linkEditInvoiceAddress" value="(//a[contains(@href,'EditBillingAddress=true')])[1]"/>
-				</click>
-				<timeout id="timeout" name="timeout">5</timeout>
-			</method>
-			
-			<method name="fillInAddressFormDuringCheckout" id="fillInAddressFormDuringCheckout">
-			    <textbox id="AddressCredentials">
-			    	<text id="//tr[@style='display: table;']//input[contains(@id,'address_FirstName')]" name="firstName" random="true">UpFirst</text>
-					<text id="//tr[@style='display: table;']//input[contains(@id,'address_LastName')]" name ="lastName" random="true">Uplast</text>
-					<text id="//tr[@style='display: table;']//input[contains(@id,'address_HouseNumber')][@type='text']" name ="houseNumber">6</text>
-					<text id="//tr[@style='display: table;']//input[contains(@id,'address_PostalCode')]" name ="postalCode">CV34 5ED</text>
-					<text id="//tr[@style='display: table;']//input[contains(@id,'address_PhoneHome')]" name ="phoneHome">+447745845612</text>
-					<text id="//tr[@style='display: table;']//input[contains(@id,'address_PhoneMobile')]" name ="phoneMobile">+448435715715</text>
-				</textbox>
-				<dropdown>
-					<selected id="//tr[@style='display: table;']//select[contains(@id,'address_Title')]" name="Title" index="Reverend"></selected>
-				</dropdown>
-				<click>
-				    <button id="totalFields" name = "totalFields" value="//tr[@style='display: table;']//input[not(ancestor::div[contains(@style,'display:none')])][@type='text']"/>	   
-			        <button id="txtboxHNo" name = "txtboxHNo" value="//tr[@style='display: table;']//input[contains(@id,'address_HouseNumber')]"/>
-			        <button id="txtboxPostalCode" name = "txtboxPostalCode" value="//tr[@style='display: table;']//input[contains(@id,'address_PostalCode')]"/>
-				    <button id="txtboxMobilePhone" name="txtboxMobilePhone" value="//tr[@style='display: table;']//input[contains(@id,'address_PhoneHome')]"/>
-				    <button id="QASAddresses" name = "QASAddresses" value="qas-monikar"/>
-			    	<button id="selectQASAddress" name = "selectQASAddress" value="(//div[@class='qas-monikar']//label)[1]"/>
-				    <button id="verifiedAddress" name = "verifiedAddress" value="//address[contains(@class,'verified-address')]"/>
-				</click>
-				<timeout id="timeout" name="timeout">5</timeout>
-			</method>
-			
-			<method name="updateAddressOnAddressPage" id="updateAddressOnAddressPage">
-				<click>
-				    <button id="totalExistingAddresses" name="totalExistingAddresses" value="//tr[contains(@class,'kor-myAccount-addressBox')]"/>
-				    <button id="invoiceAddress" name="invoiceAddress" value="//table[not(contains(@class,'lastTable'))]//div[@class='ish-address']"/>
-				    <button id="shippingAddress" name="shippingAddress" value="//table[(contains(@class,'lastTable'))]//div[@class='ish-address']"/>
-				    <button id="txtboxFirstName" name = "txtboxFirstName" value="//tr[@style='display: table;']//input[contains(@id,'address_FirstName')]"/>
-			        <button id="txtboxLastName" name = "txtboxLastName" value="//tr[@style='display: table;']//input[contains(@id,'address_LastName')]"/>			        
-				    <button id="dropdownTitle" name = "dropdownTitle" value="//tr[@style='display: table;']//select[contains(@id,'address_Title')]"/>
-				    <button id="verifiedAddress" name = "verifiedAddress" value="//address[contains(@class,'verified-address')]"/>
-				    <button id="btnUpdateAddress" name="btnUpdateAddress" value="//tr[@style='display: table;']//button[@name='updateAddress']"/>
-				    <button id="btnAddNewAddress" name="btnAddNewAddress" value="//tr[@style='display: table;']//button[@name='addNewBilling']"/>
-				    <button id="txtboxHomePhone" name="txtboxHomePhone" value="//tr[@style='display: table;']//input[contains(@id,'address_PhoneHome')]"/>
-				    <button id="txtboxMobilePhone" name="txtboxMobilePhone" value="//tr[@style='display: table;']//input[contains(@id,'address_PhoneMobile')]"/>
-				</click>
-				<timeout id="timeout" name="timeout">5</timeout>
-			</method>
-			
-			<method name="clickEditShippingLink" id="clickEditShippingLink">
-				<Elements>
-				    <button id="addressForm" name = "addressForm" value="//tr[@style='display: table;']//form[contains(@action,'ViewCheckoutAddresses-Dispatch')]"/>
-				    <button id="txtboxFirstName" name = "txtboxFirstName" value="//tr[@style='display: table;']//input[contains(@id,'address_FirstName')][@aria-required='true']"/>
-			        <button id="txtboxLastName" name = "txtboxLastName" value="//tr[@style='display: table;']//input[contains(@id,'address_LastName')][@aria-required='true']"/>
-			        <button id="txtboxHNo" name = "txtboxHNo" value="//tr[@style='display: table;']//input[contains(@id,'address_HouseNumber')][@aria-required='true']"/>
-			        <button id="txtboxPostalCode" name = "txtboxPostalCode" value="//tr[@style='display: table;']//input[contains(@id,'address_PostalCode')][@aria-required='true']"/>
-				    <button id="drpDownTitle" name = "drpDownTitle" value="//tr[@style='display: table;']//select[contains(@id,'address_Title')]"/>
-				    <button id="btnUpdateAddress" name = "btnUpdateAddress" value="//tr[@style='display: table;']//button[@name='updateAddress']"/>
-				</Elements>
-				<click>
-					<button id="linkEditShippingAddress" name = "linkEditShippingAddress" value="(//a[contains(@href,'EditShippingAddress')])[1]"/>
-				</click>
-				<timeout id="timeout" name="timeout">5</timeout>
-			</method>
-			
-			<method name="clickAddNewShipAddressLink" id="clickAddNewShipAddressLink">
-				<Elements>
-				    <button id="addressForm" name = "addressForm" value="tr[style='display: table;'] form[action*='ViewCheckoutAddresses-Dispatch']"/>
-				    <button id="txtboxFirstName" name = "txtboxFirstName" value="//tr[@style='display: table;']//input[contains(@id,'address_FirstName')][@aria-required='true']"/>
-			        <button id="txtboxLastName" name = "txtboxLastName" value="//tr[@style='display: table;']//input[contains(@id,'address_LastName')][@aria-required='true']"/>
-			        <button id="txtboxHNo" name = "txtboxHNo" value="//tr[@style='display: table;']//input[contains(@id,'address_HouseNumber')][@aria-required='true']"/>
-			        <button id="txtboxPostalCode" name = "txtboxPostalCode" value="//tr[@style='display: table;']//input[contains(@id,'address_PostalCode')][@aria-required='true']"/>
-				    <button id="drpDownTitle" name = "drpDownTitle" value="//tr[@style='display: table;']//select[contains(@id,'address_Title')]"/>
-				    <button id="btnUpdateAddress" name = "btnUpdateAddress" value="//tr[@style='display: table;']//button[@name='addNewBilling']"/>
-				</Elements>
-				<click>
-					<button id="linkAddNewShipAddress" name = "linkAddNewShipAddress" value="a[href*='NewShippingAddress=true']"/>
-				</click>
-				<timeout id="timeout" name="timeout">5</timeout>
-			</method>
-			
-			<method name="verifySidePanelAddress" id="verifySidePanelAddress">
-				<click>
-				    <button id="invAddressSidePanel" name = "invAddressSidePanel" value="//a[contains(@href,'EditBillingAddress=true')]/following-sibling::*[position()=1]//div[@class='ish-address']"/>
-				    <button id="shipAddressSidePanel" name = "shipAddressSidePanel" value="//a[contains(@href,'EditShippingAddress=true')]/following-sibling::*[position()=1]//div[@class='ish-address']"/>
-			        <button id="invAddressSidePanel_confirm" name = "invAddressSidePanel_confirm" value="(//div[@class='ish-address'])[2]"/>
-			        <button id="shipAddressSidePanel_confirm" name = "shipAddressSidePanel_confirm" value="(//div[@class='ish-address'])[1]"/>
-				</click>
-				<timeout id="timeout" name="timeout">5</timeout>
-			</method>
-			
+			</method>			
 		</module>
 		
 		<module name="userAccountModule" id="userAccountModule">
@@ -343,12 +233,11 @@
 			        </button>
 			        <button id="btnCreateAccount" name = "btnCreateAccount" value="//a[contains(@href,'ViewUserAccount-ShowRegister')]">
 			        	<verifyText>
-    				 		<visibleTextElement id="registrationForm">//a[contains(@href,'ViewUserAccount-ShowRegister')]</visibleTextElement>
+    				 		<visibleTextElement id="registrationForm">RegisterUserFullEmail_Login</visibleTextElement>
+    				 		<visibleTextElement id="registrationForm">kor-form</visibleTextElement>
     					</verifyText>
 						<timeout id="timeout" name="timeout">10</timeout>
 			        </button>
-			        <button id="registrationForm" name = "registrationForm" value="kor-form"/>
-			        <button id="emailAddress" name = "emailAddress" value="RegisterUserFullEmail_Login"/>
 			    </click>
 				<timeout id="timeout" name="timeout">5</timeout>
 			</method>
@@ -381,53 +270,6 @@
 				<timeout id="timeout" name="timeout">30</timeout>
 			</method>
 			
-			<method name="registrationFillAllValues" id="registrationFillAllValues">
-				<textbox id="EmailCredentials">
-					<text id="RegisterUserFullEmail_Login" name="user" email="true" random="true">atestuk@bakker.com</text>
-					<text id="RegisterUserFullEmail_Password" name ="password">ebsi@123</text>
-					<text id="RegisterUserFullEmail_PasswordConfirmation" name ="password">ebsi@123</text>
-					<text id="AddressForm_FirstName" name ="FirstName">TestUserFirst</text>
-					<text id="AddressForm_LastName" name ="LastName">TestUserLast</text>
-					<text id="AddressForm_HouseNumber" name ="City">5a</text>
-					<text id="AddressForm_PostalCode" name ="PostalCode">AB12 3GQ</text>
-					<text id="AddressForm_PhoneHome" name ="phoneHome">+441775715715</text>
-					<text id="AddressForm_PhoneMobile" name ="phoneMobile">+448295715715</text>
-				</textbox>
-				<dropdown>
-					<selected id="AddressForm_Title" name="Title" index="Lord"></selected>
-					<selected id="AddressForm_Birthday_Day" name="Title" index="12"></selected>
-					<selected id="AddressForm_Birthday_Month" name="Title" index="6"></selected>
-					<selected id="AddressForm_Birthday_Year" name="Title" index="1989"></selected>
-				</dropdown>
-				<click>
-					<button id="QASAddresses" name = "QASAddresses" value="qas-monikar"/>
-			    	<button id="selectQASAddress" name = "selectQASAddress" value="(//div[@class='qas-monikar']//label)[1]"/>
-				    <button id="txtboxPostalCode" name="txtboxPostalCode" value="AddressForm_PostalCode"/>
-				    <button id="txtboxHouseNo" name="txtboxHouseNo" value="AddressForm_HouseNumber"/>
-				    <button id="checkBoxOptInNewsLetter" name="checkBoxOptInNewsLetter" value="//input[@id='RegisterUserFullEmail_OptInNewsLetter']/following-sibling::label"/>
-					<button id="verifiedAddress" name = "verifiedAddress" value="//address[contains(@class,'verified-address')]"/>
-				</click>
-				<timeout id="timeout" name="timeout">30</timeout>
-			</method>
-			
-			<method name="getValuesFromRegistrationField" id="getValuesFromRegistrationField">
-				<click>
-				    <button id="txtboxPostalCode" name="txtboxPostalCode" value="AddressForm_PostalCode"/>
-				    <button id="checkBoxOptInNewsLetter" name="checkBoxOptInNewsLetter" value="//input[@id='RegisterUserFullEmail_OptInNewsLetter']/following-sibling::label"/>
-					<button id="verifiedAddress" name = "verifiedAddress" value="//address[contains(@class,'verified-address')]"/>
-					<button id="txtboxFirstName" name = "txtboxFirstName" value="AddressForm_FirstName"/>
-					<button id="txtboxLastName" name = "txtboxLastName" value="AddressForm_LastName"/>
-					<button id="txtboxEmailAddress" name = "txtboxEmailAddress" value="RegisterUserFullEmail_Login"/>
-					<button id="txtboxPhoneHome" name = "txtboxFirstName" value="AddressForm_PhoneHome"/>
-					<button id="txtboxPhoneMobile" name = "txtboxFirstName" value="AddressForm_PhoneMobile"/>
-					<button id="dropdownTitle" name = "dropdownTitle" value="AddressForm_Title"/>
-					<button id="dropdownDay" name = "dropdownDay" value="AddressForm_Birthday_Day"/>
-					<button id="dropdownMonth" name = "dropdownMonth" value="AddressForm_Birthday_Month"/>
-					<button id="dropdownYear" name = "dropdownYear" value="AddressForm_Birthday_Year"/>
-				</click>
-				<timeout id="timeout" name="timeout">5</timeout>
-			</method>
-			
 			<method name="clickCreateAccount" id="clickCreateAccount">
 				<click>
 				    <button id="btnCreateAccount" name = "btnCreateAccount" value="//button[@name='CreateAccount']"/>
@@ -444,164 +286,6 @@
 				<timeout id="timeout" name="timeout">5</timeout>
 			</method>
 			
-			<method name="navigateToSavedAddressPage" id="navigateToSavedAddressPage">
-				<click>
-				    <button id="lnkSavedAddresses" name = "lnkSavedAddresses" value="(//a[contains(@href,'ViewUserAddressList-List')])[1]"/>
-				    <button id="lnkAddNewAddress" name="lnkAddNewAddress" value="//div[contains(@class,'addANewAddressLink')]//a"/>
-				    <button id="selectedSavedAddressLink" name="selectedSavedAddressLink" value="//a[contains(@href,'ViewUserAddressList-List')][@class='selected']"/>
-				</click>
-				<timeout id="timeout" name="timeout">5</timeout>
-			</method>
-			
-			<method name="navigateToProfileSettingPage" id="navigateToProfileSettingPage">
-				<click>
-				    <button id="lnkProfileSettings" name = "lnkProfileSettings" value="(//a[contains(@href,'ViewProfileSettings-ViewProfile')])[1]"/>
-				    <button id="lnkEdit" name="lnkEdit" value="//a[contains(@href,'ViewProfileSettings-ViewPassword')]"/>
-				    <button id="selectedProfileSettingsLink" name="selectedProfileSettingsLink" value="//a[contains(@href,'ViewProfileSettings-ViewProfile')][@class='selected']"/>
-				</click>
-				<timeout id="timeout" name="timeout">5</timeout>
-			</method>
-			
-			<method name="clickAddNewAddressLink" id="clickAddNewAddressLink">
-				<click>
-				    <button id="lnkAddNewAddress" name="lnkAddNewAddress" value="//div[contains(@class,'addANewAddressLink')]//a"/>
-				    <button id="formField" name="formField" value="ish-section"/>
-				    <button id="totalExistingAddresses" name="totalExistingAddresses" value="//tr[contains(@class,'kor-myAccount-addressBox')]"/>
-				    <button id="existingAddress" name="existingAddress" value="(//div[@class='ish-address'])"/>
-				    <button id="linkEditAddress" name="linkEditAddress" value="//a[contains(@class,'update-address')]"/>
-				    <button id="linkDeleteAddress" name="linkDeleteAddress" value="//a[contains(@class,'removeLink')]"/>
-				</click>
-				<timeout id="timeout" name="timeout">5</timeout>
-			</method>
-			
-			<method name="validateNewAddressFormFieldsOnMyAccount" id="validateNewAddressFormFieldsOnMyAccount">
-				<Elements>
-					<button id="totalMandatoryFields" name="totalMandatoryFields" value="//input[@aria-required='true'][@type='text' and not(ancestor::div[contains(@style,'display:none')])]"/>
-				    <button id="dropdownTitle" name="dropdownTitle" value="//select[@id='address_Title'][@data-validate='required']"/>
-				    <button id="txtboxFirstName" name="txtboxFirstName" value="//input[@id='address_FirstName'][@aria-required='true']"/>
-				    <button id="txtboxLastName" name="txtboxLastName" value="//input[@id='address_LastName'][@aria-required='true']"/>
-				    <button id="txtboxHNo" name="txtboxHNo" value="//input[@id='address_HouseNumber'][@aria-required='true']"/>
-				    <button id="txtboxphoneHome" name="txtboxphoneHome" value="//form[@id='kor-new-address-form']//input[@id='address_PhoneHome']"/>
-				    <button id="txtboxphoneMobile" name="txtboxphoneMobile" value="//form[@id='kor-new-address-form']//input[@id='address_PhoneMobile']"/>
-				    <button id="txtboxPostalCode" name="txtboxPostalCode" value="//input[@id='address_PostalCode'][@aria-required='true']"/>
-				    <button id="chkboxShippingAddress" name="chkboxShippingAddress" value="//label[@for='address_PreferredShippingAddress']"/>
-				    <button id="chkboxBillingAddress" name="chkboxBillingAddress" value="//label[@for='address_PreferredBillingAddress']"/>
-				</Elements>
-				<click>
-					<button id="totalMandatoryFields" name="totalMandatoryFields" value="//input[not(ancestor::div[contains(@style,'display:none')])][@aria-required='true'][@type='text']"/>
-				    <button id="totalFields" name="totalFields" value="//input[contains(@id,'address_') and not(ancestor::div[contains(@style,'display:none')])][@type='text']"/>
-				</click>
-				<timeout id="timeout" name="timeout">5</timeout>
-			</method>
-			
-			<method name="fillInAddressFormOnMyAccount" id="fillInAddressFormOnMyAccount">
-				<textbox id="validAddress">
-					<text id="//input[@id='address_FirstName'][@aria-required='true']" name ="firstName">First</text>
-					<text id="//input[@id='address_LastName'][@aria-required='true']" name ="lastName">Last</text>
-					<text id="//input[@id='address_HouseNumber'][@aria-required='true']" name ="houseNumber">5a</text>
-					<text id="//input[@id='address_PostalCode'][@aria-required='true']" name ="postalCode">NE3 4DE</text>
-					<text id="//form[@id='kor-new-address-form']//input[@id='address_PhoneHome']" name ="phoneHome">+441775715715</text>
-					<text id="//form[@id='kor-new-address-form']//input[@id='address_PhoneMobile']" name ="phoneMobile">+448295715715</text>
-				</textbox>
-				<dropdown>
-					<selected id="//select[@id='address_Title'][@data-validate='required']" name="Title" index="Dr"></selected>
-				</dropdown>
-				<click>
-					<button id="QASAddresses" name = "QASAddresses" value="qas-monikar"/>
-			    	<button id="selectQASAddress" name = "selectQASAddress" value="(//div[@class='qas-monikar']//label)[1]"/>
-				    <button id="txtboxPostalCode" name="txtboxPostalCode" value="//input[@id='address_PostalCode'][@aria-required='true']"/>
-				    <button id="txtboxHno" name="txtboxHno" value="//input[@id='address_HouseNumber'][@aria-required='true']"/>
-				    <button id="txtboxPhoneHome" name="txtboxPhoneHome" value="//form[@id='kor-new-address-form']//input[@id='address_PhoneHome']"/>
-					<button id="verifiedAddress" name = "verifiedAddress" value="//address[contains(@class,'verified-address')]"/>
-				</click>
-				<timeout id="timeout" name="timeout">5</timeout>
-			</method>
-						
-			<method name="createAddress" id="createAddress">
-				<click>
-				    <button id="totalExistingAddresses" name="totalExistingAddresses" value="//tr[contains(@class,'kor-myAccount-addressBox')]"/>
-				    <button id="existingAddress" name="existingAddress" value="(//div[@class='ish-address'])"/>
-				    <button id="dropdownTitle" name="dropdownTitle" value="address_Title"/>
-				    <button id="txtboxFirstName" name="txtboxFirstName" value="address_FirstName"/>
-				    <button id="txtboxLastName" name="txtboxLastName" value="address_LastName"/>
-				    <button id="txtboxHNo" name="txtboxHNo" value="address_HouseNumber"/>
-				    <button id="txtboxPhoneHome" name="txtboxPhoneHome" value="//form[@id='kor-new-address-form']//input[@id='address_PhoneHome']"/>
-				    <button id="txtboxPhoneMobile" name="txtboxPhoneMobile" value="//form[@id='kor-new-address-form']//input[@id='address_PhoneMobile']"/>
-				    <button id="txtboxPostalCode" name="txtboxPostalCode" value="//input[@id='address_PostalCode'][@aria-required='true']"/>
-				    <button id="verifiedAddress" name = "verifiedAddress" value="//address[contains(@class,'verified-address')]"/>
-				    <button id="btnCreateAddress" name="btnCreateAddress" value="createAddress"/>
-				    <button id="lnkAddNewAddress" name="lnkAddNewAddress" value="//div[contains(@class,'addANewAddressLink')]//a"/>
-				</click>
-				<timeout id="timeout" name="timeout">5</timeout>
-			</method>
-			
-			<method name="clickEditLinkForNormalAddress" id="clickEditLinkForNormalAddress">
-				<click>
-				    <button id="formField" name="formField" value="form#kor-edit-address-form div.ish-section"/>
-				    <button id="lnkEditAddress" name = "lnkEditAddress" value="//a[contains(@data-url,'PreferredShipping=false')]"/>
-				    <button id="selectedSavedAddressLink" name="selectedSavedAddressLink" value="(//a[contains(@href,'ViewUserAddressList-List')])[1][@class='selected']"/>
-				    <button id="totalExistingAddresses" name="totalExistingAddresses" value="//tr[contains(@class,'kor-myAccount-addressBox')]"/>
-				    <button id="existingAddress" name="existingAddress" value="(//div[@class='ish-address'])"/>				    
-				</click>
-				<timeout id="timeout" name="timeout">5</timeout>
-			</method>
-			
-			<method name="formValidationEditAddress" id="formValidationEditAddress">
-			    <Elements>
-			        <button id="dropdownTitle" name="dropdownTitle" value="//td//select[@id='address_Title' and @data-validate='required']"/>
-				    <button id="txtboxFirstName" name="txtboxFirstName" value="//td//input[@id='address_FirstName'][@aria-required='true']"/>
-				    <button id="txtboxLastName" name="txtboxLastName" value="//td//input[@id='address_LastName'][@aria-required='true']"/>
-				    <button id="txtboxHNo" name="txtboxHNo" value="//td//input[@id='address_HouseNumber'][@aria-required='true']"/>
-				    <button id="txtboxPostalCode" name="txtboxPostalCode" value="//td//input[@id='address_PostalCode'][@aria-required='true']"/>
-				    <button id="chkboxShippingAddress" name="chkboxShippingAddress" value="//td//label[contains(@for,'address_PreferredShippingAddress')]"/>
-				    <button id="chkboxBillingAddress" name="chkboxBillingAddress" value="//td//label[contains(@for,'address_PreferredBillingAddress')]"/>
-				    <button id="txtboxPhoneHome" name="txtboxPhoneHome" value="//td//input[@id='address_PhoneHome']"/>
-				    <button id="txtboxPhoneMobile" name="txtboxPhoneMobile" value="//td//input[@id='address_PhoneMobile']"/>
-			    </Elements>
-			    <click>
-				    <button id="totalMandatoryFields" name="totalMandatoryFields" value="//td[@style='']//input[not(ancestor::div[contains(@style,'display:none')])][@aria-required='true'][@type='text']"/>
-					<button id="totalFields" name = "totalFields" value="//td[@style='']//input[not(ancestor::div[contains(@style,'display:none')])][@type='text']"/>
-				</click>
-				<timeout id="timeout" name="timeout">5</timeout>
-			</method>
-			
-			<method name="fillInEditAddressFormOnMyAccount" id="fillInEditAddressFormOnMyAccount">
-				<textbox id="AddressCredentials">
-					<text id="//td//input[@id='address_FirstName'][@aria-required='true']" name="firstName" random="true">first</text>
-					<text id="//td//input[@id='address_LastName'][@aria-required='true']" name ="lastName" random="true">last</text>
-					<text id="//td//input[@id='address_HouseNumber'][@aria-required='true']" name ="houseNumber">6</text>
-					<text id="//td//input[@id='address_PostalCode'][@aria-required='true']" name ="PostalCode">WS12 4RD</text>
-				</textbox>
-				<dropdown>
-					<selected id="//td//select[@id='address_Title' and @data-validate='required']" name="Title" index="Mr"></selected>
-				</dropdown>
-				<click>
-					<button id="txtboxPostalCode" name="txtboxPostalCode" value="//td//input[@id='address_PostalCode'][@aria-required='true']"/>
-					<button id="txtboxHno" name="txtboxHno" value="//td//input[@id='address_HouseNumber'][@aria-required='true']"/>
-				    <button id="txtboxPhoneHome" name="txtboxPhoneHome" value="//td//input[@id='address_PhoneHome']"/>
-					<button id="QASAddresses" name = "QASAddresses" value="qas-monikar"/>
-			    	<button id="selectQASAddress" name = "selectQASAddress" value="(//div[@class='qas-monikar']//label)[1]"/>
-					<button id="verifiedAddress" name = "verifiedAddress" value="//address[contains(@class,'verified-address')]"/>
-				</click>
-				<timeout id="timeout" name="timeout">5</timeout>
-			</method>
-			
-			<method name="updateAddress" id="updateAddress">
-				<click>
-				    <button id="totalExistingAddresses" name="totalExistingAddresses" value="//tr[contains(@class,'kor-myAccount-addressBox')]"/>
-				    <button id="existingAddress" name="existingAddress" value="(//div[@class='ish-address'])"/>
-				    <button id="dropdownTitle" name="dropdownTitle" value="(//select[@id='address_Title'])[2]"/>
-				    <button id="txtboxFirstName" name="txtboxFirstName" value="(//input[@id='address_FirstName'])[2]"/>
-				    <button id="txtboxLastName" name="txtboxLastName" value="(//input[@id='address_LastName'])[2]"/>
-				    <button id="txtboxHNo" name="txtboxHNo" value="(//input[@id='address_HouseNumber'])[2]"/>
-				    <button id="txtboxPostalCode" name="txtboxPostalCode" value="(//input[@id='address_PostalCode'])[2]"/>
-				    <button id="verifiedAddress" name = "verifiedAddress" value="//address[contains(@class,'verified-address')]"/>
-				    <button id="btnUpdateAddress" name="btnUpdateAddress" value="//button[@name='update']"/>
-				    <button id="lnkAddNewAddress" name="lnkAddNewAddress" value="//div[contains(@class,'addANewAddressLink')]//a"/>
-				</click>
-				<timeout id="timeout" name="timeout">5</timeout>
-			</method>
-			
 			<method name="logInWithDynamicUser" id="logInWithDynamicUser">
 				<textbox>
 					<text id="ShopLoginForm_Password" name ="password">ebsi@123</text>			
@@ -609,32 +293,6 @@
 				<click>
 				    <button id="txtboxEmailAddress" name = "txtboxEmailAddress" value="//input[@id='ShopLoginForm_Login']"/>
 				    <button id="btnSignIn" name = "btnSignIn" value="//button[@value='Login']"/>
-				</click>
-				<timeout id="timeout" name="timeout">5</timeout>
-			</method>
-			
-			<method name="verifyGetProfileOnSavedAddress" id="verifyGetProfileOnSavedAddress">
-				<click>
-				    <button id="existingAddress" name="existingAddress" value="//div[@class='ish-address']"/>
-				</click>
-				<timeout id="timeout" name="timeout">5</timeout>
-			</method>
-			
-			<method name="verifyGetProfileOnProfileSetting" id="verifyGetProfileOnProfileSetting">
-				<click>
-				    <button id="nameWithTitle" name="nameWithTitle" value="(//div[contains(@class,'flex')]//div)[1]"/>
-				    <button id="phone" name="phone" value="(//div[contains(@class,'flex')]//div)[2]"/>
-				    <button id="mobile" name="mobile" value="(//div[contains(@class,'flex')]//div)[3]"/>
-				</click>
-				<timeout id="timeout" name="timeout">5</timeout>
-			</method>
-			
-			<method name="verifyGetProfileOnProfileSetting1" id="verifyGetProfileOnProfileSetting1">
-				<click>
-				    <button id="nameWithTitle" name="nameWithTitle" value="(//div[contains(@class,'flex')]//div)[1]"/>
-				    <button id="phone" name="phone" value="(//div[contains(@class,'flex')]//div)[2]"/>
-				    <button id="mobile" name="mobile" value="(//div[contains(@class,'flex')]//div)[3]"/>
-				    <button id="birthDay" name="birthDay" value="(//div[contains(@class,'flex')]//div)[4]"/>
 				</click>
 				<timeout id="timeout" name="timeout">5</timeout>
 			</method>

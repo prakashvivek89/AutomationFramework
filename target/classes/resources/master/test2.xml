@@ -15,8 +15,8 @@
 			<class name="com.eperium.main.jumpstart.JumpStartTestSuite">
 				<methods>
 					<include name="launchHomePage" />
-					<include name="navigateToRegistrationPage" />
-					<include name="registrationValidCredentials" />	
+					<!-- <include name="navigateToRegistrationPage" /> -->
+					<!-- <include name="registrationValidCredentials" /> -->	
 				</methods>
 			</class>
 		</classes>

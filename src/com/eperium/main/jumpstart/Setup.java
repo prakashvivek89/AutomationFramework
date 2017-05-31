@@ -8,6 +8,8 @@ import java.util.LinkedHashMap;
 import java.util.Properties;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Platform;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -21,7 +23,12 @@ import org.openqa.selenium.phantomjs.PhantomJSDriverService;
 import org.openqa.selenium.remote.CapabilityType;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.safari.SafariDriver;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.ITestContext;
+import org.testng.annotations.AfterClass;
+import org.testng.annotations.BeforeClass;
+import org.testng.annotations.BeforeSuite;
+
 import com.eperium.testframework.utils.AdvanceXMLUtil;
 import com.eperium.testframework.utils.PropertyLoader;
 import com.eperium.testframework.utils.TestCaseUtil;
@@ -43,7 +50,7 @@ public class Setup {
 	public static Properties ENVIRONMENT;
 	static File app;
 	static String channel;
-	protected String timeoutString = null;
+	protected String timeoutString = "10";
 	String moduleName = null;
 	String methodName = null;
 	protected String baseWidowHandle = null;
@@ -54,6 +61,9 @@ public class Setup {
 	static FirefoxProfile firefoxProfile = null;
 	static String site;
 	static LoggingPreferences logs;
+	protected WebDriver wDriver = null;
+	static WebDriverWait wait = null;
+	static JavascriptExecutor js = null;
 
 	public static void getParameter(ITestContext context) throws Exception {
 		try {
@@ -187,6 +197,19 @@ public class Setup {
 		desiredCapabilities.setVersion(version);
 		return desiredCapabilities;
 	}
+	
+	public static DesiredCapabilities androidDesireCapabilities() {
+		DesiredCapabilities capabilities = new DesiredCapabilities();
+		capabilities.setCapability(CapabilityType.BROWSER_NAME, "");
+		capabilities.setCapability("platformName", "Android");
+		capabilities.setCapability("app", app.getAbsolutePath());
+		capabilities.setCapability("deviceName", "5362ab76");
+		capabilities.setCapability("appPackage", "com.salmon.dfs.servicemanager");
+		capabilities.setCapability("appActivity", "com.salmon.dfs.servicemanager.MainActivity");
+		capabilities.setCapability(CapabilityType.ForSeleniumServer.ENSURING_CLEAN_SESSION, true);
+		capabilities.setCapability("recreateChromeDriverSessions", true);
+		return capabilities;
+	}
 
 	private static void startSafariDriver() {
 		driver = new SafariDriver(safariDesiredCapebilities());
@@ -230,18 +253,23 @@ public class Setup {
 		testCaseUtil = new TestCaseUtil();
 		baseWidowHandle = driver.getWindowHandle();
 	}
+	
+	@BeforeSuite(alwaysRun = true)
+	public void setupBeforeSuite(ITestContext context) throws Exception {
+		getParameter(context);
+	}
 
-	public static DesiredCapabilities androidDesireCapabilities() {
-		DesiredCapabilities capabilities = new DesiredCapabilities();
-		capabilities.setCapability(CapabilityType.BROWSER_NAME, "");
-		capabilities.setCapability("platformName", "Android");
-		capabilities.setCapability("app", app.getAbsolutePath());
-		capabilities.setCapability("deviceName", "5362ab76");
-		capabilities.setCapability("appPackage", "com.salmon.dfs.servicemanager");
-		capabilities.setCapability("appActivity", "com.salmon.dfs.servicemanager.MainActivity");
-		capabilities.setCapability(CapabilityType.ForSeleniumServer.ENSURING_CLEAN_SESSION, true);
-		capabilities.setCapability("recreateChromeDriverSessions", true);
-		return capabilities;
+	@BeforeClass(alwaysRun = true)
+	public void setUpBeforeclass() throws Exception {
+		driverInitialization();
+		this.wDriver = getDriver();
+		this.wait = new WebDriverWait(wDriver, Integer.parseInt(timeoutString));
+		this.js = (JavascriptExecutor) wDriver;
+	}
+	
+	@AfterClass(alwaysRun = true)
+	public void setupAfterSuite() {
+		wDriver.quit();
 	}
 
 }

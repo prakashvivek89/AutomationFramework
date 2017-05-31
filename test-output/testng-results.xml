@@ -1,52 +1,54 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="2" total="3" passed="1">
+<testng-results skipped="0" failed="1" total="1" passed="0">
   <reporter-output>
   </reporter-output>
-  <suite name="BakkerSmokeTest" duration-ms="39181" started-at="2017-05-26T09:50:36Z" finished-at="2017-05-26T09:51:15Z">
+  <suite name="BakkerSmokeTest" duration-ms="18880" started-at="2017-05-31T08:03:17Z" finished-at="2017-05-31T08:03:36Z">
     <groups>
     </groups>
-    <test name="MyAccount_AddNewAddressAndEditAddress" duration-ms="39181" started-at="2017-05-26T09:50:36Z" finished-at="2017-05-26T09:51:15Z">
+    <test name="MyAccount_AddNewAddressAndEditAddress" duration-ms="18880" started-at="2017-05-31T08:03:17Z" finished-at="2017-05-31T08:03:36Z">
       <class name="com.eperium.main.jumpstart.JumpStartTestSuite">
-        <test-method status="PASS" signature="setupBeforeSuite(org.testng.ITestContext)[pri:0, instance:com.eperium.main.jumpstart.JumpStartTestSuite@4dfa3a9d]" name="setupBeforeSuite" is-config="true" duration-ms="555" started-at="2017-05-26T15:20:35Z" finished-at="2017-05-26T15:20:36Z">
+        <test-method status="PASS" signature="setupBeforeSuite(org.testng.ITestContext)[pri:0, instance:com.eperium.main.jumpstart.JumpStartTestSuite@4dfa3a9d]" name="setupBeforeSuite" is-config="true" duration-ms="556" started-at="2017-05-31T13:33:16Z" finished-at="2017-05-31T13:33:17Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[org.testng.TestRunner@7d3d101b]]>
+                <![CDATA[org.testng.TestRunner@518caac3]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setupBeforeSuite -->
-        <test-method status="PASS" signature="setUpBeforeclass()[pri:0, instance:com.eperium.main.jumpstart.JumpStartTestSuite@4dfa3a9d]" name="setUpBeforeclass" is-config="true" duration-ms="3902" started-at="2017-05-26T15:20:36Z" finished-at="2017-05-26T15:20:40Z">
+        <test-method status="PASS" signature="setUpBeforeclass()[pri:0, instance:com.eperium.main.jumpstart.JumpStartTestSuite@4dfa3a9d]" name="setUpBeforeclass" is-config="true" duration-ms="3023" started-at="2017-05-31T13:33:17Z" finished-at="2017-05-31T13:33:20Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUpBeforeclass -->
-        <test-method status="FAIL" signature="launchHomePage()[pri:0, instance:com.eperium.main.jumpstart.JumpStartTestSuite@4dfa3a9d]" name="launchHomePage" duration-ms="24339" started-at="2017-05-26T15:20:40Z" description="Launch Home Page" finished-at="2017-05-26T15:21:04Z">
-          <exception class="org.openqa.selenium.WebDriverException">
+        <test-method status="FAIL" signature="launchHomePage()[pri:0, instance:com.eperium.main.jumpstart.JumpStartTestSuite@4dfa3a9d]" name="launchHomePage" duration-ms="14963" started-at="2017-05-31T13:33:20Z" description="Launch Home Page" finished-at="2017-05-31T13:33:35Z">
+          <exception class="org.openqa.selenium.InvalidSelectorException">
             <message>
-              <![CDATA[unknown error: cannot get automation extension
-from unknown error: page could not be found: chrome-extension://aapnijgdinlhnhlmodcfapnahmbfebeb/_generated_background_page.html
+              <![CDATA[invalid selector: An invalid or illegal class name was specified
   (Session info: chrome=58.0.3029.110)
-  (Driver info: chromedriver=2.25.426923 (0390b88869384d6eb0d5d09729679f934aab9eed),platform=Windows NT 6.1.7601 SP1 x86_64) (WARNING: The server did not provide any stacktrace information)
-Command duration or timeout: 10.16 seconds
+  (Driver info: chromedriver=2.28.455520 (cc17746adff54984afff480136733114c6b3704b),platform=Windows NT 6.1.7601 SP1 x86_64) (WARNING: The server did not provide any stacktrace information)
+Command duration or timeout: 59 milliseconds
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/invalid_selector_exception.html
 Build info: version: '3.4.0', revision: 'unknown', time: 'unknown'
 System info: host: 'EBSI-LAT5540-32', ip: '169.254.150.158', os.name: 'Windows 7', os.arch: 'amd64', os.version: '6.1', java.version: '1.8.0_77'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities [{applicationCacheEnabled=false, rotatable=false, mobileEmulationEnabled=false, networkConnectionEnabled=false, chrome={chromedriverVersion=2.25.426923 (0390b88869384d6eb0d5d09729679f934aab9eed), userDataDir=C:\Users\prakashv\AppData\Local\Temp\scoped_dir3112_24105}, takesHeapSnapshot=true, pageLoadStrategy=normal, databaseEnabled=false, handlesAlerts=true, hasTouchScreen=false, version=58.0.3029.110, platform=XP, browserConnectionEnabled=false, nativeEvents=true, acceptSslCerts=true, locationContextEnabled=true, webStorageEnabled=true, browserName=chrome, takesScreenshot=true, javascriptEnabled=true, cssSelectorsEnabled=true}]
-Session ID: 5027c12ae90ed70a04cccad1cb9277f6]]>
+Capabilities [{applicationCacheEnabled=false, rotatable=false, mobileEmulationEnabled=false, networkConnectionEnabled=false, chrome={chromedriverVersion=2.28.455520 (cc17746adff54984afff480136733114c6b3704b), userDataDir=C:\Users\prakashv\AppData\Local\Temp\scoped_dir7128_26996}, takesHeapSnapshot=true, pageLoadStrategy=normal, databaseEnabled=false, handlesAlerts=true, hasTouchScreen=false, version=58.0.3029.110, platform=XP, browserConnectionEnabled=false, nativeEvents=true, acceptSslCerts=true, locationContextEnabled=true, webStorageEnabled=true, browserName=chrome, takesScreenshot=true, javascriptEnabled=true, cssSelectorsEnabled=true, unexpectedAlertBehaviour=}]
+Session ID: 7cd5afc3a59ef1e7e21c8776e503c1ef
+*** Element info: {Using=class name, value=//img[contains(@src,'logo/logo-en.png')]}]]>
             </message>
             <full-stacktrace>
-              <![CDATA[org.openqa.selenium.WebDriverException: unknown error: cannot get automation extension
-from unknown error: page could not be found: chrome-extension://aapnijgdinlhnhlmodcfapnahmbfebeb/_generated_background_page.html
+              <![CDATA[org.openqa.selenium.InvalidSelectorException: invalid selector: An invalid or illegal class name was specified
   (Session info: chrome=58.0.3029.110)
-  (Driver info: chromedriver=2.25.426923 (0390b88869384d6eb0d5d09729679f934aab9eed),platform=Windows NT 6.1.7601 SP1 x86_64) (WARNING: The server did not provide any stacktrace information)
-Command duration or timeout: 10.16 seconds
+  (Driver info: chromedriver=2.28.455520 (cc17746adff54984afff480136733114c6b3704b),platform=Windows NT 6.1.7601 SP1 x86_64) (WARNING: The server did not provide any stacktrace information)
+Command duration or timeout: 59 milliseconds
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/invalid_selector_exception.html
 Build info: version: '3.4.0', revision: 'unknown', time: 'unknown'
 System info: host: 'EBSI-LAT5540-32', ip: '169.254.150.158', os.name: 'Windows 7', os.arch: 'amd64', os.version: '6.1', java.version: '1.8.0_77'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities [{applicationCacheEnabled=false, rotatable=false, mobileEmulationEnabled=false, networkConnectionEnabled=false, chrome={chromedriverVersion=2.25.426923 (0390b88869384d6eb0d5d09729679f934aab9eed), userDataDir=C:\Users\prakashv\AppData\Local\Temp\scoped_dir3112_24105}, takesHeapSnapshot=true, pageLoadStrategy=normal, databaseEnabled=false, handlesAlerts=true, hasTouchScreen=false, version=58.0.3029.110, platform=XP, browserConnectionEnabled=false, nativeEvents=true, acceptSslCerts=true, locationContextEnabled=true, webStorageEnabled=true, browserName=chrome, takesScreenshot=true, javascriptEnabled=true, cssSelectorsEnabled=true}]
-Session ID: 5027c12ae90ed70a04cccad1cb9277f6
+Capabilities [{applicationCacheEnabled=false, rotatable=false, mobileEmulationEnabled=false, networkConnectionEnabled=false, chrome={chromedriverVersion=2.28.455520 (cc17746adff54984afff480136733114c6b3704b), userDataDir=C:\Users\prakashv\AppData\Local\Temp\scoped_dir7128_26996}, takesHeapSnapshot=true, pageLoadStrategy=normal, databaseEnabled=false, handlesAlerts=true, hasTouchScreen=false, version=58.0.3029.110, platform=XP, browserConnectionEnabled=false, nativeEvents=true, acceptSslCerts=true, locationContextEnabled=true, webStorageEnabled=true, browserName=chrome, takesScreenshot=true, javascriptEnabled=true, cssSelectorsEnabled=true, unexpectedAlertBehaviour=}]
+Session ID: 7cd5afc3a59ef1e7e21c8776e503c1ef
+*** Element info: {Using=class name, value=//img[contains(@src,'logo/logo-en.png')]}
 	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
 	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
 	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
@@ -54,9 +56,15 @@ Session ID: 5027c12ae90ed70a04cccad1cb9277f6
 	at org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:216)
 	at org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:168)
 	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:635)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:658)
-	at org.openqa.selenium.remote.RemoteWebDriver$RemoteWebDriverOptions$RemoteWindow.maximize(RemoteWebDriver.java:882)
-	at com.eperium.main.jumpstart.JumpStartTestSuite.launchHomePage(JumpStartTestSuite.java:47)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElements(RemoteWebDriver.java:393)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElementsByClassName(RemoteWebDriver.java:461)
+	at org.openqa.selenium.By$ByClassName.findElements(By.java:383)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElements(RemoteWebDriver.java:356)
+	at com.eperium.testframework.utils.xml.VisibleTextElement.getWebElement(VisibleTextElement.java:52)
+	at com.eperium.testframework.utils.xml.VisibleTextElement._validate(VisibleTextElement.java:34)
+	at com.eperium.testframework.utils.xml.VisibleTextElement.validate(VisibleTextElement.java:18)
+	at com.eperium.testframework.utils.TestCaseUtil.checkAllTextMsgs(TestCaseUtil.java:46)
+	at com.eperium.main.jumpstart.JumpStartTestSuite.launchHomePage(JumpStartTestSuite.java:28)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -83,56 +91,11 @@ Session ID: 5027c12ae90ed70a04cccad1cb9277f6
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:81)
 ]]>
             </full-stacktrace>
-          </exception> <!-- org.openqa.selenium.WebDriverException -->
+          </exception> <!-- org.openqa.selenium.InvalidSelectorException -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- launchHomePage -->
-        <test-method status="PASS" signature="navigateToRegistrationPage()[pri:0, instance:com.eperium.main.jumpstart.JumpStartTestSuite@4dfa3a9d]" name="navigateToRegistrationPage" duration-ms="8844" started-at="2017-05-26T15:21:04Z" description="Navigate to Registration page" finished-at="2017-05-26T15:21:13Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- navigateToRegistrationPage -->
-        <test-method status="FAIL" signature="registrationValidCredentials()[pri:0, instance:com.eperium.main.jumpstart.JumpStartTestSuite@4dfa3a9d]" name="registrationValidCredentials" duration-ms="116" started-at="2017-05-26T15:21:13Z" description="Register with valid credentials" finished-at="2017-05-26T15:21:13Z">
-          <exception class="java.lang.NumberFormatException">
-            <message>
-              <![CDATA[null]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[java.lang.NumberFormatException: null
-	at java.lang.Integer.parseInt(Integer.java:542)
-	at java.lang.Integer.parseInt(Integer.java:615)
-	at com.eperium.testframework.utils.TestCaseUtil.checkAllFormElements(TestCaseUtil.java:86)
-	at com.eperium.main.jumpstart.JumpStartTestSuite.registrationValidCredentials(JumpStartTestSuite.java:93)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.lang.reflect.Method.invoke(Method.java:498)
-	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:85)
-	at org.testng.internal.Invoker.invokeMethod(Invoker.java:696)
-	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:882)
-	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1189)
-	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:124)
-	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:108)
-	at org.testng.TestRunner.privateRun(TestRunner.java:767)
-	at org.testng.TestRunner.run(TestRunner.java:617)
-	at org.testng.SuiteRunner.runTest(SuiteRunner.java:348)
-	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:343)
-	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:305)
-	at org.testng.SuiteRunner.run(SuiteRunner.java:254)
-	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
-	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1224)
-	at org.testng.TestNG.runSuitesLocally(TestNG.java:1149)
-	at org.testng.TestNG.run(TestNG.java:1057)
-	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:132)
-	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:236)
-	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:81)
-]]>
-            </full-stacktrace>
-          </exception> <!-- java.lang.NumberFormatException -->
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- registrationValidCredentials -->
-        <test-method status="PASS" signature="setupAfterSuite()[pri:0, instance:com.eperium.main.jumpstart.JumpStartTestSuite@4dfa3a9d]" name="setupAfterSuite" is-config="true" duration-ms="1915" started-at="2017-05-26T15:21:13Z" finished-at="2017-05-26T15:21:15Z">
+        <test-method status="PASS" signature="setupAfterSuite()[pri:0, instance:com.eperium.main.jumpstart.JumpStartTestSuite@4dfa3a9d]" name="setupAfterSuite" is-config="true" duration-ms="882" started-at="2017-05-31T13:33:35Z" finished-at="2017-05-31T13:33:36Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setupAfterSuite -->

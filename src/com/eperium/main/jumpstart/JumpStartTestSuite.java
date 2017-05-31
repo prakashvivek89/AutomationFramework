@@ -14,39 +14,17 @@ import org.testng.Assert;
 import org.testng.ITestContext;
 
 public class JumpStartTestSuite extends Setup {
-	protected WebDriver wDriver = null;
 	String getvalue1 = null;
-	WebDriverWait wait = null;
-	JavascriptExecutor js = null;
-
-	@BeforeSuite(alwaysRun = true)
-	public void setupBeforeSuite(ITestContext context) throws Exception {
-		getParameter(context);
-	}
-
-	@BeforeClass(alwaysRun = true)
-	public void setUpBeforeclass() throws Exception {
-		driverInitialization();
-		this.wDriver = getDriver();
-		this.wait = new WebDriverWait(wDriver, 10);
-//		this.wait = new WebDriverWait(wDriver, Integer.parseInt(timeoutString));
-		this.js = (JavascriptExecutor) wDriver;
-	}
-
-	public void initialize11(String moduleName, String methodName) {
-		methodIinitialization(moduleName, methodName);
-	}
 
 	@Test(description = "Launch Home Page")
 	public void launchHomePage() {
 		moduleName = "homePageModule";
 		methodName = "launchHomePage";
-		initialize11(moduleName, methodName);
+		methodIinitialization(moduleName, methodName);
 		String homePageURL = urlProp.getProperty("homePageURL");
 		wDriver.navigate().to(homePageURL);
 		wDriver.manage().window().maximize();
 		Assert.assertEquals(wDriver.getCurrentUrl(), homePageURL);
-//		wait.until(ExpectedConditions.presenceOfElementLocated((By.xpath(mLink.get("imgCarousel")))));
 		testCaseUtil.checkAllTextMsgs(moduleName, methodName, noClick, wDriver);
 	}
 
@@ -54,29 +32,28 @@ public class JumpStartTestSuite extends Setup {
 	public void navigateToRegistrationPage() {
 		moduleName = "userAccountModule";
 		methodName = "navigateToRegistrationPage";
-		initialize11(moduleName, methodName);
-		wait.until(ExpectedConditions.elementToBeClickable(By.xpath(mLink.get("lnkMyAccount")))).click();
-		wait.until(ExpectedConditions.elementToBeClickable(By.xpath(mLink.get("btnCreateAccount")))).click();
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.className(mLink.get("registrationForm"))));
-		wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(By.id(mLink.get("emailAddress"))));
+		methodIinitialization(moduleName, methodName);
+		testCaseUtil.processElements(mLink, "click", moduleName, methodName, wDriver);
+//		wait.until(ExpectedConditions.elementToBeClickable(By.xpath(mLink.get("lnkMyAccount")))).click();
+//		wait.until(ExpectedConditions.elementToBeClickable(By.xpath(mLink.get("btnCreateAccount")))).click();
+//		wait.until(ExpectedConditions.visibilityOfElementLocated(By.className(mLink.get("registrationForm"))));
+//		wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(By.id(mLink.get("emailAddress"))));
 	}
 
 	@Test(description = "Navigate to login page")
 	public void navigateToLoginPage() {
 		moduleName = "userAccountModule";
 		methodName = "navigateToLoginPage";
-		initialize11(moduleName, methodName);
+		methodIinitialization(moduleName, methodName);
 		testCaseUtil.processElements(mLink, "click", moduleName, methodName, wDriver);
 		testCaseUtil.checkAllTextMsgs(moduleName, methodName, noClick, wDriver);
-//		wDriver.findElement(By.xpath(mLink.get("lnkMyAccount"))).click();
-//		wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath(mLink.get("loginForm"))));
 	}
 
 	@Test(description = "Login with valid user")
 	public void logInWithValidCredentials() {
 		moduleName = "userAccountModule";
 		methodName = "logInWithValidCredentials";
-		initialize11(moduleName, methodName);
+		methodIinitialization(moduleName, methodName);
 		String emailAddress = dataProp.getProperty("EmailAddress");
 		String password = dataProp.getProperty("Password");
 		wDriver.findElement(By.xpath(mLink.get("txtboxEmailAddress"))).sendKeys(emailAddress);
@@ -88,7 +65,7 @@ public class JumpStartTestSuite extends Setup {
 	public void registrationValidCredentials() throws InterruptedException {
 		moduleName = "userAccountModule";
 		methodName = "registrationValidCredentials";
-		initialize11(moduleName, methodName);
+		methodIinitialization(moduleName, methodName);
 		Actions moveTo = new Actions(wDriver);
 		testCaseUtil.checkAllFormElements(moduleName, methodName, wDriver);
 		getvalue1 = wDriver.findElement(By.xpath(mLink.get("emailTextbox"))).getAttribute("value");
@@ -129,7 +106,7 @@ public class JumpStartTestSuite extends Setup {
 	public void clickCreateAccount() {
 		moduleName = "userAccountModule";
 		methodName = "clickCreateAccount";
-		initialize11(moduleName, methodName);
+		methodIinitialization(moduleName, methodName);
 		wDriver.findElement(By.xpath(mLink.get("btnCreateAccount"))).click();
 		wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath(mLink.get("lnkLogout"))));
 		Assert.assertTrue(wDriver.findElement(By.xpath(mLink.get("lnkLogout"))).isEnabled());
